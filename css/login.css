@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+
+#LogoText{
+    font-family: 'Ribeye', cursive;
+}
+
+#row{
+    width: 100%;
+}
