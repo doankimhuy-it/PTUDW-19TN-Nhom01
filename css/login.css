@@ -4,6 +4,61 @@
     font-family: 'Ribeye', cursive;
 }
 
-#row{
-    width: 100%;
+#login{
+    display: flex;
+}
+
+.input-field{
+    display: inline-block;
+    margin-top: 6rem;
+}
+
+#login-input{
+    flex: 5;
+}
+
+#field-image{
+    flex: 5;
+}
+
+#image-stop{
+    width: 50%;
+    height: auto;
+}
+
+#role{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.text-field{
+    width: 75%;
+}
+
+#login-text{
+    color: #F18701;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+#submit-login{
+    padding: 1rem;
+    background-color: #F18701;
+    color: white;
+}
+
+select:focus > option:checked{ 
+    background: #F18701 !important;
+    color: white !important;
+}
+
+@media screen and (max-width: 3000px) {
+    #field-image{
+        display: none;
+    }
+
+    #login{
+        margin-top: 3rem;
+    }
 }
