@@ -35,6 +35,12 @@ body {
     padding-bottom: 0.1rem;
 }
 
-#sp-btn button {
+#info-table {
+    border-radius: 1rem !important;
+    overflow: hidden;
+    padding: 0;
+}
 
+thead {
+    background-color: #E9EAEF;
 }
