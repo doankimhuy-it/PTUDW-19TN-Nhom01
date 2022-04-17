@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-primary {
+    background-color: #F18701;
+    border: 0;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #F18701;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: black;
+}
