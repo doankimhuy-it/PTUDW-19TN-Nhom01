@@ -10,7 +10,7 @@
 
 .input-field{
     display: inline-block;
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 
 #login-input{
@@ -53,12 +53,21 @@ select:focus > option:checked{
     color: white !important;
 }
 
-@media screen and (max-width: 3000px) {
+@media screen and (max-width: 1000px) {
     #field-image{
         display: none;
     }
 
     #login{
-        margin-top: 3rem;
+        margin-top: 1rem;
     }
+}
+
+#row{
+    width: 30%;
+}
+
+#Logo-container{
+    display: flex;
+    justify-content: center;
 }

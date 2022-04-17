@@ -15,12 +15,12 @@
 </head>
 <body class="bg-light">
     <!-- LOGO -->
-    <div class="container mt-5">
-        <div class="row justify-content-between">
-            <div class="col-4">
+    <div class="container mt-2 justify-content-center" id="Logo-container">
+        <div class="row justify-content-between" id="row">
+            <div class="col-12 col-md-3">
                 <img src="img/covid.png" alt="COVID" class="img-fluid">
             </div>
-            <div class="col-7 display-1 align-self-center">
+            <div class="col-9 lead align-self-center d-none d-md-block">
                 ANTI
                 <p class="text-danger" id="LogoText">COVID-19</p>
             </div>
@@ -29,15 +29,15 @@
 
     <!-- LOGIN -->
     <section id="login">
-       <div id="login-input" class="display-2 align-self-center text-center">
-           <h1 class="display-1" id="login-text">Đăng nhập</h1>
+       <div id="login-input" class="align-self-center text-center">
+           <h1 class="display-5" id="login-text">Đăng nhập</h1>
            <form action="#" class="justify-content-center text-center">
-               <input type="text" name="username" placeholder="Tên đăng nhập *" class="input-field text-field p-3">
+               <input type="text" name="username" placeholder="Tên đăng nhập *" class="input-field text-field p-1">
                <br>
-               <input type="text" name="password" placeholder="Mật khẩu *" class="input-field text-field p-3">
+               <input type="text" name="password" placeholder="Mật khẩu *" class="input-field text-field p-1">
                <br>
                <button type="submit" class="input-field" id="submit-login">Đăng nhập</button>
-                <select name="role" id="role" class="p-3">
+                <select name="role" id="role" class="p-1">
                     <option value="admin">Quản trị viên</option>
                     <option value="manager">Quản lý</option>
                     <option value="user">Người dùng</option>
