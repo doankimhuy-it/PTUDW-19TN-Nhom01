@@ -20,3 +20,12 @@ body {
     text-decoration: none;
     color: black;
 }
+
+#sub-nav {
+    background-color: #B3D6FF;
+}
+
+#sub-nav button {
+    background-color: #E5EEFF;
+    border-radius: 15px;
+}
