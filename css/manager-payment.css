@@ -1,0 +1,22 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-primary {
+    background-color: #F18701 !important;
+    border: 0;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #F18701 !important;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: black;
+}
