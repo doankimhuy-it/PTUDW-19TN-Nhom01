@@ -68,3 +68,7 @@ th:nth-child(1), td:nth-child(1) {
 #pagination {
     color: #707683;
 }
+
+option::after {
+    background-color: #F18701;
+}

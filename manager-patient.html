@@ -19,9 +19,8 @@
             <a class="navbar-brand" href="#">
                 <img src="img/covid.png" alt="Logo" width="40" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="main-nav">
@@ -68,7 +67,7 @@
 
     <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
         <div id="add-btn">
-            <button class="btn btn-link text-center">
+            <button class="btn btn-link text-center" data-bs-toggle="modal" data-bs-target="#add-people-modal">
                 <span><i class="fa-solid fa-circle-plus me-2"></i>Thêm người</span>
             </button>
         </div>
@@ -212,7 +211,7 @@
                     aria-expanded="false">
                     10
                 </button>
-            
+
                 <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-sm-start" aria-labelledby="row-select">
                     <li><a class="dropdown-item" href="#">5</a></li>
                     <li><a class="dropdown-item" href="#">10</a></li>
@@ -226,9 +225,116 @@
         </span>
     </div>
 
+
+    <!-- Modal to add people -->
+    <div class="modal fade" id="add-people-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="add-people-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="add-people-modal-label">Thêm người bệnh</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="container-fluid mx-2">
+                            <div class="row py-3">
+                                <div class="col" id="add-people-name">
+                                    <label for="people-name" class="form-label">Họ và tên</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-name" id="people-name"
+                                        placeholder="Nguyễn Văn A">
+                                </div>
+                                <div class="col" id="add-people-birthday">
+                                    <label for="people-birthday" class="form-label">Ngày tháng năm sinh</label>
+                                    <br />
+                                    <input type="date" class="form-control" name="people-birthday" id="people-birthday">
+                                </div>
+                                <div class="col" id="add-people-gender">
+                                    <label for="people-gender" class="form-label">Giới tính</label>
+                                    <br />
+                                    <select name="people-gender" id="people-gender" class="form-select">
+                                        <option value="1" selected>Nam</option>
+                                        <option value="2">Nữ</option>
+                                        <option value="0">Khác</option>
+                                    </select>
+                                </div>
+                                <div class="col" id="add-people-state">
+                                    <label for="people-state" class="form-label">Tình trạng</label>
+                                    <br />
+                                    <select name="people-state" id="people-state" class="form-select">
+                                        <option value="0" selected>F0</option>
+                                        <option value="1">F1</option>
+                                        <option value="2">F2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col" id="add-people-address">
+                                    <label for="people-adress" class="form-label">Địa chỉ</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-adress" id="people-adress"
+                                        placeholder="227 Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh">
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col" id="add-people-id">
+                                    <label for="people-id" class="form-label">Số CMND/CCCD</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-id" id="people-id"
+                                        placeholder="Nhập số CMND/CCCD">
+                                </div>
+                                <div class="col" id="add-people-treatment-place">
+                                    <label for="people-treatment-place" class="form-label">Nơi điều trị/cách ly</label>
+                                    <br/>
+                                    <select name="people-treatment-place" id="people-treatment-place" class="form-select">
+                                        <option value="q1" selected>TTYT quận 1</option>
+                                        <option value="q2">TTYT quận 2</option>
+                                        <option value="q3">TTYT quận 3</option>
+                                        <option value="q4">TTYT quận 4</option>
+                                        <option value="q5">TTYT quận 5</option>
+                                        <option value="q6">TTYT quận 6</option>
+                                        <option value="q7">TTYT quận 7</option>
+                                        <option value="q8">TTYT quận 8</option>
+                                        <option value="q9">TTYT quận 9</option>
+                                        <option value="q10">TTYT quận 10</option>
+                                        <option value="q11">TTYT quận 11</option>
+                                        <option value="q12">TTYT quận 12</option>
+                                        <option value="qtb">TTYT quận Tân Bình</option>
+                                        <option value="qbt">TTYT quận Bình Tân</option>
+                                        <option value="tptd">TTYT thành phố Thủ Đức</option>
+                                        <option value="hnb">TTYT huyện Nhà Bè</option>
+                                        <option value="hcg">TTYT huyện Cần Giờ</option>
+                                        <option value="hbc">TTYT huyện Bình Chánh</option>
+                                        <option value="hcc">TTYT huyện Củ Chi</option>
+                                        <option value="hhm">TTYT huyện Hóc Môn</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col" id="add-related-people">
+                                <label for="related-people" class="form-label">Người liên quan</label>
+                                <br/>
+                                <textarea class="form-control" name="related-people" id="related-people" rows="1"></textarea>
+                                <br/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script>
+        $('#people-birthday').datetime
+    </script>
 </body>
 
 </html>
