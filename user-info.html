@@ -86,7 +86,7 @@
                             <div class="space"></div>
 
                             <!-- trigger modal -->
-                            <button id="trigger-modal" type="button" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                            <button class="trigger-modal" type="button" data-bs-toggle="modal" data-bs-target="#reg-modal">
                                 <i class="bi bi-pencil-fill"></i>
                             </button>
                             
@@ -181,7 +181,69 @@
                             <div id="space">
 
                             </div>
-                            <a href="#">XEM CHI TIẾT</a>
+                            <button class="trigger-modal bg-light text-primary" type="button" data-bs-toggle="modal" data-bs-target="#reg2-modal">XEM CHI TIẾT</button>
+
+                            <!-- modal content -->
+                            <div class="modal fade" id="reg2-modal" tabindex="-1" aria-labelledby="title-detail" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="title-detail">
+                                                CHI TIẾT LỊCH SỬ THANH TOÁN
+                                            </h5>
+                                            <button class="btn-close" type="'button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table id="table">
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th>LOẠI SẢN PHẨM</th>
+                                                    <th>SỐ LƯỢNG</th>
+                                                    <th>GIÁ TIỀN</th>
+                                                    <th>THỜI GIAN</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Rau</td>
+                                                    <td>10 kg</td>
+                                                    <td>150000 VNĐ</td>
+                                                    <td>19/4/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Cá</td>
+                                                    <td>1 kg</td>
+                                                    <td>50000 VNĐ</td>
+                                                    <td>20/4/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Trứng</td>
+                                                    <td>30 quả</td>
+                                                    <td>100000 VNĐ</td>
+                                                    <td>20/4/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Thịt</td>
+                                                    <td>1 kg</td>
+                                                    <td>100000</td>
+                                                    <td>21/4/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Hoa quả</td>
+                                                    <td>1 kg</td>
+                                                    <td>50000</td>
+                                                    <td>21/4/2022</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </label>
                         <p class="field rounded">
                                 19/4/2022 - 150.000 VND
