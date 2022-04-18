@@ -20,49 +20,160 @@
                 <img src="img/covid.png" alt="Logo" width="40" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item mx-3">
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav nav-fill w-100">
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
-                            <button type="button" class="btn btn-primary">DANH SÁCH NGƯỜI LIÊN QUAN</button>
+                            <button type="button" class="btn btn-primary w-100">NGƯỜI LIÊN QUAN</button>
                         </a>
                     </li>
-                    <li class="nav-item mx-5">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <button type="button" class="btn btn-link">NHU YẾU PHẨM</button></a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">
-                            <button type="button" class="btn btn-link">THỐNG KÊ</button></a>
+                            <button type="button" class="btn btn-link w-100">NHU YẾU PHẨM</button>
                         </a>
                     </li>
-                    <li class="nav-item mx-5">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <button type="button" class="btn btn-link">THANH TOÁN</button></a>
+                            <button type="button" class="btn btn-link w-100">THỐNG KÊ</button>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button type="button" class="btn btn-link w-100">THANH TOÁN</button>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex justify-content-center align-items-center">
+
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="account-control"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-sm-start"
+                                aria-labelledby="account-control">
+                                <li><a class="dropdown-item" href="#">Cài đặt tài khoản</a></li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-                <div class="d-flex me-5">
-                    <i class="fas fa-user-circle"></i>
-                    <div class="dropdown ms-2">
-                        <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
-                            aria-expanded="false"></a>
-                    
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
-                            <li><a class="dropdown-item" href="#">Cài đặt tài khoản</a></li>
-                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
+        </div>
         </div>
     </nav>
 
+    <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
+        <div id="add-btn">
+            <button class="btn btn-link text-center">
+                <span><i class="fa-solid fa-circle-plus me-2"></i>Thêm người</span>
+            </button>
+        </div>
 
+        <div id="sp-btn">
+            <button class="btn btn-link text-center">
+                <span><i class="fa-solid fa-magnifying-glass me-2"></i>Tìm</span>
+            </button>
+
+            <button class="btn btn-link text-center">
+                <span><i class="fa-solid fa-arrow-down-a-z me-2"></i>Sắp xếp</span>
+            </button>
+
+            <button class="btn btn-link text-center">
+                <span><i class="fa fa-filter me-2"></i>Lọc</span>
+            </button>
+        </div>
+    </div>
+
+    <section id="info-table" class="container my-2">
+        <table class="table table-hover border table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Năm sinh</th>
+                    <th scope="col">Tình trạng</th>
+                    <th scope="col">Nơi đang điều trị</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Nguyễn Văn A</td>
+                    <td>2000</td>
+                    <td>F0</td>
+                    <td>TTYT Quận 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Nguyễn Thị B</td>
+                    <td>1999</td>
+                    <td>F1</td>
+                    <td>TTYT Quận 3</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Lò Văn C</td>
+                    <td>1970</td>
+                    <td>F1</td>
+                    <td>TTYT Quận 5</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Bành Thị D</td>
+                    <td>1950</td>
+                    <td>F0</td>
+                    <td>TTYT Quận Tân Bình</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Nguyễn Văn E</td>
+                    <td>1999</td>
+                    <td>F2</td>
+                    <td>Tại nhà</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Nguyễn Thị F</td>
+                    <td>1982</td>
+                    <td>F0</td>
+                    <td>TTYT Quận 7</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Lê Văn G</td>
+                    <td>2011</td>
+                    <td>F1</td>
+                    <td>TTYT Quận 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Nguyễn Văn H</td>
+                    <td>2002</td>
+                    <td>F0</td>
+                    <td>TTYT TP Thủ Đức</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Lò Thị I</td>
+                    <td>1990</td>
+                    <td>F0</td>
+                    <td>TTYT Quận 12</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>Nguyễn Văn X</td>
+                    <td>2004</td>
+                    <td>F2</td>
+                    <td>Tại nhà</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
