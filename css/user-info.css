@@ -70,6 +70,10 @@
     margin-top: 1rem;
 }
 
+#password-container{
+    display: flex;
+}
+
 .way-image{
     height: 100px;
 }
@@ -99,4 +103,33 @@
     
     display: flex;
     justify-content: center;
+}
+
+.space{
+    flex: 1;
+}
+
+#trigger-modal{
+    background-color: white;
+    border: none;
+}
+
+.section-change{
+    margin-bottom: 2rem;
+}
+
+.input-change{
+    width: 80%;
+}
+
+#error{
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    display: none;
+}
+
+.label-change{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
