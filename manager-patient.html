@@ -103,7 +103,7 @@
                     <th scope="row">1</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>2000</td>
                     <td>F0</td>
@@ -113,7 +113,7 @@
                     <th scope="row">2</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1999</td>
                     <td>F1</td>
@@ -123,7 +123,7 @@
                     <th scope="row">3</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1970</td>
                     <td>F1</td>
@@ -133,7 +133,7 @@
                     <th scope="row">4</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1950</td>
                     <td>F0</td>
@@ -143,7 +143,7 @@
                     <th scope="row">5</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1999</td>
                     <td>F2</td>
@@ -153,7 +153,7 @@
                     <th scope="row">6</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1982</td>
                     <td>F0</td>
@@ -163,7 +163,7 @@
                     <th scope="row">7</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>2011</td>
                     <td>F1</td>
@@ -173,7 +173,7 @@
                     <th scope="row">8</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>2002</td>
                     <td>F0</td>
@@ -183,7 +183,7 @@
                     <th scope="row">9</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>1990</td>
                     <td>F0</td>
@@ -193,7 +193,7 @@
                     <th scope="row">10</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Nguyễn Văn A</span>
+                        <a class="name" data-bs-toggle="modal" data-bs-target="#modify-people-modal">Nguyễn Văn A</a>
                     </td>
                     <td>2004</td>
                     <td>F2</td>
@@ -229,64 +229,65 @@
     <!-- Modal to add people -->
     <div class="modal fade" id="add-people-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="add-people-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header" hidden="true">
                     <h5 class="modal-title" id="add-people-modal-label">Thêm người bệnh</h5>
                 </div>
-                <form>
+                <form id="add-people-info">
                     <div class="modal-body">
                         <div class="container-fluid mx-2">
-                            <div class="row py-3">
-                                <div class="col" id="add-people-name">
-                                    <label for="people-name" class="form-label">Họ và tên</label>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-name-group">
+                                    <label for="add-people-name" class="form-label text-nowrap">Họ và tên</label>
                                     <br />
-                                    <input type="text" class="form-control" name="people-name" id="people-name"
+                                    <input type="text" class="form-control" name="add-people-name" id="add-people-name"
                                         placeholder="Nguyễn Văn A">
                                 </div>
-                                <div class="col" id="add-people-birthday">
-                                    <label for="people-birthday" class="form-label">Ngày tháng năm sinh</label>
+                                <div class="col" id="add-people-birthday-group">
+                                    <label for="add-people-birthday" class="form-label text-nowrap">Năm sinh</label>
                                     <br />
-                                    <input type="date" class="form-control" name="people-birthday" id="people-birthday">
+                                    <input type="date" class="form-control" name="add-people-birthday" id="add-people-birthday">
                                 </div>
-                                <div class="col" id="add-people-gender">
-                                    <label for="people-gender" class="form-label">Giới tính</label>
+                                <div class="col" id="add-people-gender-group">
+                                    <label for="add-people-gender" class="form-label text-nowrap">Giới tính</label>
                                     <br />
-                                    <select name="people-gender" id="people-gender" class="form-select">
+                                    <select name="add-people-gender" id="add-people-gender" class="form-select">
                                         <option value="1" selected>Nam</option>
                                         <option value="2">Nữ</option>
                                         <option value="0">Khác</option>
                                     </select>
                                 </div>
-                                <div class="col" id="add-people-state">
-                                    <label for="people-state" class="form-label">Tình trạng</label>
+                                <div class="col" id="add-people-status-group">
+                                    <label for="add-people-status" class="form-label text-nowrap">Tình trạng</label>
                                     <br />
-                                    <select name="people-state" id="people-state" class="form-select">
+                                    <select name="add-people-status" id="add-people-status" class="form-select">
                                         <option value="0" selected>F0</option>
                                         <option value="1">F1</option>
                                         <option value="2">F2</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="row py-3">
-                                <div class="col" id="add-people-address">
-                                    <label for="people-adress" class="form-label">Địa chỉ</label>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-address-group">
+                                    <label for="add-people-adress" class="form-label">Địa chỉ</label>
                                     <br />
-                                    <input type="text" class="form-control" name="people-adress" id="people-adress"
+                                    <input type="text" class="form-control" name="add-people-adress" id="add-people-adress"
                                         placeholder="227 Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh">
                                 </div>
                             </div>
-                            <div class="row py-3">
-                                <div class="col" id="add-people-id">
-                                    <label for="people-id" class="form-label">Số CMND/CCCD</label>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-id-group">
+                                    <label for="add-people-id" class="form-label">Số CMND/CCCD</label>
                                     <br />
-                                    <input type="text" class="form-control" name="people-id" id="people-id"
+                                    <input type="text" class="form-control" name="add-people-id" id="add-people-id"
                                         placeholder="Nhập số CMND/CCCD">
                                 </div>
-                                <div class="col" id="add-people-treatment-place">
-                                    <label for="people-treatment-place" class="form-label">Nơi điều trị/cách ly</label>
-                                    <br/>
-                                    <select name="people-treatment-place" id="people-treatment-place" class="form-select">
+                                <div class="col" id="add-people-treatment-place-group">
+                                    <label for="add-people-treatment-place" class="form-label">Nơi điều trị/cách ly</label>
+                                    <br />
+                                    <select name="add-people-treatment-place" id="add-people-treatment-place"
+                                        class="form-select">
                                         <option value="q1" selected>TTYT quận 1</option>
                                         <option value="q2">TTYT quận 2</option>
                                         <option value="q3">TTYT quận 3</option>
@@ -310,21 +311,272 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col" id="add-related-people">
-                                <label for="related-people" class="form-label">Người liên quan</label>
-                                <br/>
-                                <textarea class="form-control" name="related-people" id="related-people" rows="1"></textarea>
-                                <br/>
-                                
+                            <div class="row my-3" id="add-related-people-group">
+                                <label for="add-related-people" class="form-label">Người liên quan</label>
+                                <div>
+                                    <textarea class="form-control" name="add-related-people" id="add-related-people" rows="1"
+                                        cols="1"></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center mt-2">
+                                    <button id="add-related-people-btn" type="button" class="btn btn-link"
+                                        data-bs-toggle="modal" data-bs-target="#add-more-related-people">
+                                        <span><i class="fa-solid fa-circle-plus me-2 mt-0"></i>Thêm người liên
+                                            quan</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row my-3" id="add-treatment-history-group">
+                                <p>Lịch sử điều trị</p>
+                                <div>
+                                    <ul class="list-group">
+                                        <li>
+                                            <div id="add-treatment-history-3" class="d-flex mb-2">
+                                                <div class="col me-4" id="add-treatment-history-date">
+                                                    <input type="date" class="form-control"
+                                                        name="add-treatment-history-date" id="add-treatment-history-date">
+                                                </div>
+                                                <div class="col me-4" id="add-treatment-history-status">
+                                                    <select name="add-treatment-history-status"
+                                                        id="add-treatment-history-status" class="form-select">
+                                                        <option value="0" selected>F0</option>
+                                                        <option value="1">F1</option>
+                                                        <option value="2">F2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col" id="add-treatment-history-place">
+                                                    <select name="add-people-treatment-place" id="add-people-treatment-place"
+                                                        class="form-select">
+                                                        <option value="q1" selected>TTYT quận 1</option>
+                                                        <option value="q2">TTYT quận 2</option>
+                                                        <option value="q3">TTYT quận 3</option>
+                                                        <option value="q4">TTYT quận 4</option>
+                                                        <option value="q5">TTYT quận 5</option>
+                                                        <option value="q6">TTYT quận 6</option>
+                                                        <option value="q7">TTYT quận 7</option>
+                                                        <option value="q8">TTYT quận 8</option>
+                                                        <option value="q9">TTYT quận 9</option>
+                                                        <option value="q10">TTYT quận 10</option>
+                                                        <option value="q11">TTYT quận 11</option>
+                                                        <option value="q12">TTYT quận 12</option>
+                                                        <option value="qtb">TTYT quận Tân Bình</option>
+                                                        <option value="qbt">TTYT quận Bình Tân</option>
+                                                        <option value="tptd">TTYT thành phố Thủ Đức</option>
+                                                        <option value="hnb">TTYT huyện Nhà Bè</option>
+                                                        <option value="hcg">TTYT huyện Cần Giờ</option>
+                                                        <option value="hbc">TTYT huyện Bình Chánh</option>
+                                                        <option value="hcc">TTYT huyện Củ Chi</option>
+                                                        <option value="hhm">TTYT huyện Hóc Môn</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex justify-content-center mt-2">
+                                    <button id="add-related-people-btn" type="button" class="btn btn-link"
+                                        data-bs-toggle="modal" data-bs-target="#add-more-related-people">
+                                        <span><i class="fa-solid fa-circle-plus me-2 mt-0"></i>Thêm lịch sử</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer border-0">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
+                    <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
+                        <button type="button" class="btn btn-secondary col-3" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" form="add-people-info" class="btn btn-primary col-3">Thêm</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal to add related people -->
+    <div class="modal fade" id="add-more-related-people" tabindex="-1" aria-labelledby="add-more-related-people-label"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="add-more-related-people-label">Thêm người liên quan</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="add-related-people-form">
+                        <label for="related-people-name" class="form-label text-nowrap">Nhập họ tên người liên
+                            quan</label>
+                        <br />
+                        <input type="text" class="form-control" name="related-people-name" id="related-people-name"
+                            placeholder="Nguyễn Văn A">
+                    </form>
+                </div>
+                <div class="modal-footer border-0 d-flex justify-content-around">
+                    <button class="btn btn-secondary col-3" data-bs-target="#add-people-modal"
+                        data-bs-toggle="modal">Hủy</button>
+                    <button id="submit-add-more-related-people-btn" class="btn btn-primary col-3"
+                        data-bs-target="#add-people-modal" data-bs-toggle="modal">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to modify people -->
+    <div class="modal fade" id="modify-people-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modify-people-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="modify-people-modal-label">Xem/chỉnh sửa người bệnh</h5>
+                </div>
+                <form id="modify-people-info">
+                    <div class="modal-body">
+                        <div class="container-fluid mx-2">
+                            <div class="row my-3">
+                                <div class="col" id="modify-people-name-group">
+                                    <label for="modify-people-name" class="form-label text-nowrap">Họ và tên</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="modify-people-name" id="modify-people-name"
+                                        placeholder="Nguyễn Văn A">
+                                </div>
+                                <div class="col" id="modify-people-birthday-group">
+                                    <label for="modify-people-birthday" class="form-label text-nowrap">Năm sinh</label>
+                                    <br />
+                                    <input type="date" class="form-control" name="modify-people-birthday" id="modify-people-birthday">
+                                </div>
+                                <div class="col" id="modify-people-gender-group">
+                                    <label for="modify-people-gender" class="form-label text-nowrap">Giới tính</label>
+                                    <br />
+                                    <select name="modify-people-gender" id="modify-people-gender" class="form-select">
+                                        <option value="1" selected>Nam</option>
+                                        <option value="2">Nữ</option>
+                                        <option value="0">Khác</option>
+                                    </select>
+                                </div>
+                                <div class="col" id="modify-people-status-group">
+                                    <label for="modify-people-status" class="form-label text-nowrap">Tình trạng</label>
+                                    <br />
+                                    <select name="modify-people-status" id="modify-people-status" class="form-select">
+                                        <option value="0" selected>F0</option>
+                                        <option value="1">F1</option>
+                                        <option value="2">F2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col" id="modify-people-address-group">
+                                    <label for="modify-people-adress" class="form-label">Địa chỉ</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="modify-people-adress" id="modify-people-adress"
+                                        placeholder="227 Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh">
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col" id="modify-people-id-group">
+                                    <label for="modify-people-id" class="form-label">Số CMND/CCCD</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="modify-people-id" id="modify-people-id"
+                                        placeholder="000000000000">
+                                </div>
+                                <div class="col" id="modify-people-treatment-place-group">
+                                    <label for="modify-people-treatment-place" class="form-label">Nơi điều trị/cách ly</label>
+                                    <br />
+                                    <select name="modify-people-treatment-place" id="modify-people-treatment-place"
+                                        class="form-select">
+                                        <option value="q1" selected>TTYT quận 1</option>
+                                        <option value="q2">TTYT quận 2</option>
+                                        <option value="q3">TTYT quận 3</option>
+                                        <option value="q4">TTYT quận 4</option>
+                                        <option value="q5">TTYT quận 5</option>
+                                        <option value="q6">TTYT quận 6</option>
+                                        <option value="q7">TTYT quận 7</option>
+                                        <option value="q8">TTYT quận 8</option>
+                                        <option value="q9">TTYT quận 9</option>
+                                        <option value="q10">TTYT quận 10</option>
+                                        <option value="q11">TTYT quận 11</option>
+                                        <option value="q12">TTYT quận 12</option>
+                                        <option value="qtb">TTYT quận Tân Bình</option>
+                                        <option value="qbt">TTYT quận Bình Tân</option>
+                                        <option value="tptd">TTYT thành phố Thủ Đức</option>
+                                        <option value="hnb">TTYT huyện Nhà Bè</option>
+                                        <option value="hcg">TTYT huyện Cần Giờ</option>
+                                        <option value="hbc">TTYT huyện Bình Chánh</option>
+                                        <option value="hcc">TTYT huyện Củ Chi</option>
+                                        <option value="hhm">TTYT huyện Hóc Môn</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row my-3" id="modify-related-people-group">
+                                <label for="modify-related-people" class="form-label">Người liên quan</label>
+                                <div>
+                                    <textarea class="form-control" name="modify-related-people" id="modify-related-people" rows="1"
+                                        cols="1"></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center mt-2">
+                                    <button id="add-related-people-btn" type="button" class="btn btn-link"
+                                        data-bs-toggle="modal" data-bs-target="#add-more-related-people">
+                                        <span><i class="fa-solid fa-circle-plus me-2 mt-0"></i>Thêm người liên
+                                            quan</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row my-3" id="modify-treatment-history-group">
+                                <p>Lịch sử điều trị</p>
+                                <div>
+                                    <ul class="list-group">
+                                        <li>
+                                            <div id="modify-treatment-history-3" class="d-flex mb-2">
+                                                <div class="col me-4" id="modify-treatment-history-date">
+                                                    <input type="date" class="form-control"
+                                                        name="modify-treatment-history-date" id="modify-treatment-history-date">
+                                                </div>
+                                                <div class="col me-4" id="modify-treatment-history-status">
+                                                    <select name="modify-treatment-history-status"
+                                                        id="modify-treatment-history-status" class="form-select">
+                                                        <option value="0" selected>F0</option>
+                                                        <option value="1">F1</option>
+                                                        <option value="2">F2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col" id="modify-treatment-history-place">
+                                                    <select name="modify-people-treatment-place" id="modify-people-treatment-place"
+                                                        class="form-select">
+                                                        <option value="q1" selected>TTYT quận 1</option>
+                                                        <option value="q2">TTYT quận 2</option>
+                                                        <option value="q3">TTYT quận 3</option>
+                                                        <option value="q4">TTYT quận 4</option>
+                                                        <option value="q5">TTYT quận 5</option>
+                                                        <option value="q6">TTYT quận 6</option>
+                                                        <option value="q7">TTYT quận 7</option>
+                                                        <option value="q8">TTYT quận 8</option>
+                                                        <option value="q9">TTYT quận 9</option>
+                                                        <option value="q10">TTYT quận 10</option>
+                                                        <option value="q11">TTYT quận 11</option>
+                                                        <option value="q12">TTYT quận 12</option>
+                                                        <option value="qtb">TTYT quận Tân Bình</option>
+                                                        <option value="qbt">TTYT quận Bình Tân</option>
+                                                        <option value="tptd">TTYT thành phố Thủ Đức</option>
+                                                        <option value="hnb">TTYT huyện Nhà Bè</option>
+                                                        <option value="hcg">TTYT huyện Cần Giờ</option>
+                                                        <option value="hbc">TTYT huyện Bình Chánh</option>
+                                                        <option value="hcc">TTYT huyện Củ Chi</option>
+                                                        <option value="hhm">TTYT huyện Hóc Môn</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex justify-content-center mt-2">
+                                    <button id="modify-related-people-btn" type="button" class="btn btn-link"
+                                        data-bs-toggle="modal" data-bs-target="#">
+                                        <span><i class="fa-solid fa-circle-plus me-2 mt-0"></i>Thêm lịch sử</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
+                        <button type="button" class="btn btn-secondary col-3" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" form="modify-people-info" class="btn btn-primary col-3">Xác nhận</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
