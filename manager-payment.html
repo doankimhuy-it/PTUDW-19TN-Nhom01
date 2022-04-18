@@ -66,7 +66,7 @@
         </div>
     </nav>
 
-    <div id="sub-nav" class="d-flex container-fluid  align-items-center justify-content-between px-5">
+    <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
         <div id="send-btn">
             <button class="btn btn-link text-center">
                 <span><i class="fa-solid fa-circle-plus"></i> Gửi yêu cầu thanh toán</span>
@@ -79,29 +79,70 @@
             </button>
 
             <button class="btn btn-link text-center">
-                <span><i class="fa-solid fa-arrow-down-a-z"></i> Sắp xếp</span>
+                <!-- <span><i class="fa-solid fa-arrow-down-a-z"></i> Sắp xếp</span> -->
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
-                            aria-expanded="false"></a>
+                            aria-expanded="false">
+                            <span><i class="fa-solid fa-arrow-down-a-z"></i> Sắp xếp</span></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
-                        <li class="dropdown-item">F0</li>
+                        <!-- <li class="dropdown-item">F0</li>
                         <li class="dropdown-item">F1</li>
                         <li class="dropdown-item">F2</li>
-                        <li class="dropdown-item">F3</li>
+                        <li class="dropdown-item">F3</li> -->
+                        <li class="dropdown-item">
+                            <div id="Filter-type">
+                                <label for="filter-type">Sắp xếp theo </label>
+                                <select name="filter-type" id="filter-type" class="form-select form-select-sm">
+                                    <option value="Họ tên" selected>Họ tên</option>
+                                    <option value="Năm sinh">Năm sinh</option>
+                                    <option value="Tình trạng">Tình trạng</option>
+                                    <option value="Nơi điều trị">Nơi điều trị</option>
+                                </select>                               
+                            </div>
+
+                            <div id="Filter-attribute">
+                                <span>Thứ tự </span>
+                                <select name="" id="" class="form-select form-select-sm">
+                                    <option value="Tăng dần" selected>Tăng dần</option>
+                                    <option value="Giảm dần">Giảm dần</option>
+                                </select>    
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </button>
 
             <button class="btn btn-link text-center">
-                <span><i class="fa fa-filter"></i> Lọc</span>
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
-                            aria-expanded="false"></a>
+                            aria-expanded="false">
+                            <span><i class="fa fa-filter"></i> Lọc</span></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
-                        <li class="dropdown-item">F0</li>
-                        <li class="dropdown-item">F1</li>
-                        <li class="dropdown-item">F2</li>
-                        <li class="dropdown-item">F3</li>
+                        <!-- <li class="dropdown-item">Họ tên</li>
+                        <li class="dropdown-item">Năm sinh</li>
+                        <li class="dropdown-item">Tình trạng</li>
+                        <li class="dropdown-item">Nơi điều trị</li> -->
+                        <li class="dropdown-item">
+                            <div id="Filter-type">
+                                <label for="filter-type">Sắp xếp theo </label>
+                                <select name="filter-type" id="filter-type" class="form-select form-select-sm">
+                                    <option value="Họ tên" selected>Họ tên</option>
+                                    <option value="Năm sinh">Năm sinh</option>
+                                    <option value="Tình trạng">Tình trạng</option>
+                                    <option value="Nơi điều trị">Nơi điều trị</option>
+                                </select>                               
+                            </div>
+
+                            <div id="Filter-attribute">
+                                <span>Thứ tự </span>
+                                <select name="" id="" class="form-select form-select-sm">
+                                    <option value="F0" selected>F0</option>
+                                    <option value="F1">F1</option>
+                                    <option value="F2">F2</option>
+                                    <option value="F3">F3</option>
+                                </select>    
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </button>
