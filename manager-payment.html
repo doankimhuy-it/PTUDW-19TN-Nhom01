@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item mx-3">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link" aria-current="page" href="manager-patient.html">
                             <button type="button" class="btn btn-link">DANH SÁCH NGƯỜI LIÊN QUAN</button>
                         </a>
                     </li>
@@ -44,7 +44,7 @@
                             <button type="button" class="btn btn-link">THỐNG KÊ</button></a>
                         </a>
                     </li>
-                    <li class="nav-item mx-5">
+                    <li class="nav-item active mx-5">
                         <a class="nav-link" href="#">
                             <button type="button" class="btn btn-primary">THANH TOÁN</button></a>
                         </a>
@@ -151,11 +151,12 @@
     </div>
 
     <div id="minimum-payment-setup container-fluid">
-        <form action="" class="row g-3 align-items-center d-flex justify-content-evenly py-5">
+        <form action="" class="row g-3 align-items-end d-flex justify-content-evenly py-3">
             <div class="col-6">
                 <label for="inlineFormInputGroupUsername">Thay đổi hạn mức thanh toán tối thiểu</label>
                 <div class="input-group">
-                  <input type="text" class="form-control input-sm" id="inlineFormInputGroupUsername" placeholder="50000">
+                  <input type="text" class="form-control input-sm" id="inlineFormInputGroupUsername" 
+                    placeholder="50000">
                 </div>
             </div>
 
@@ -165,7 +166,101 @@
         </form>
     </div>
 
-    
+    <section id="info-table" class="container-fluid mt-4">
+        <table class="table table-hover table-borderless align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Năm sinh</th>
+                    <th scope="col">Số dư</th>
+                    <th scope="col">Dư nợ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
+                    <td>2000</td>
+                    <td>1000000</td>
+                    <td>500000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Thị B</span>
+                    </td>
+                    <td>1999</td>
+                    <td>2000000</td>
+                    <td>3000000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Lò Văn C</span>
+                    </td>
+                    <td>1970</td>
+                    <td>4000000</td>
+                    <td>1000000</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn D</span>
+                    </td>
+                    <td>1999</td>
+                    <td>50000</td>
+                    <td>300000</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Trần Thị E</span>
+                    </td>
+                    <td>2004</td>
+                    <td>400000</td>
+                    <td>200000</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Lê Thị F</span>
+                    </td>
+                    <td>2002</td>
+                    <td>1500000</td>
+                    <td>1000000</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Bành Thị G</span>
+                    </td>
+                    <td>1989</td>
+                    <td>1400000</td>
+                    <td>1600000</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Hoàng Văn H</span>
+                    </td>
+                    <td>1998</td>
+                    <td>1500000</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
 
 
