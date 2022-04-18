@@ -30,6 +30,10 @@ body {
     border-radius: 15px;
 }
 
+#submit-btn {
+    height: 100%;
+}
+
 /* #sub-nav .subnav-content {
     list-style-type: none;
     display: none;
