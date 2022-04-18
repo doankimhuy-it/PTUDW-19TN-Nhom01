@@ -19,9 +19,8 @@
             <a class="navbar-brand" href="#">
                 <img src="img/covid.png" alt="Logo" width="40" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="main-nav">
@@ -47,11 +46,10 @@
                         </a>
                     </li>
                     <li class="nav-item d-flex justify-content-center align-items-center">
-
                         <div class="dropdown ms-2">
                             <button class="btn btn-link dropdown-toggle" type="button" id="account-control"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user-circle"></i>
+                                <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill">
                             </button>
 
                             <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-sm-start"
@@ -69,7 +67,7 @@
 
     <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
         <div id="add-btn">
-            <button class="btn btn-link text-center">
+            <button class="btn btn-link text-center" data-bs-toggle="modal" data-bs-target="#add-people-modal">
                 <span><i class="fa-solid fa-circle-plus me-2"></i>Thêm người</span>
             </button>
         </div>
@@ -89,8 +87,8 @@
         </div>
     </div>
 
-    <section id="info-table" class="container my-2">
-        <table class="table table-hover border table-borderless">
+    <section id="info-table" class="container-fluid mt-4">
+        <table class="table table-hover table-borderless align-middle">
             <thead>
                 <tr>
                     <th scope="col">STT</th>
@@ -103,70 +101,100 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Nguyễn Văn A</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>2000</td>
                     <td>F0</td>
                     <td>TTYT Quận 1</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Nguyễn Thị B</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1999</td>
                     <td>F1</td>
                     <td>TTYT Quận 3</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Lò Văn C</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1970</td>
                     <td>F1</td>
                     <td>TTYT Quận 5</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Bành Thị D</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1950</td>
                     <td>F0</td>
                     <td>TTYT Quận Tân Bình</td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>Nguyễn Văn E</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1999</td>
                     <td>F2</td>
                     <td>Tại nhà</td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
-                    <td>Nguyễn Thị F</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1982</td>
                     <td>F0</td>
                     <td>TTYT Quận 7</td>
                 </tr>
                 <tr>
                     <th scope="row">7</th>
-                    <td>Lê Văn G</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>2011</td>
                     <td>F1</td>
                     <td>TTYT Quận 1</td>
                 </tr>
                 <tr>
                     <th scope="row">8</th>
-                    <td>Nguyễn Văn H</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>2002</td>
                     <td>F0</td>
                     <td>TTYT TP Thủ Đức</td>
                 </tr>
                 <tr>
                     <th scope="row">9</th>
-                    <td>Lò Thị I</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>1990</td>
                     <td>F0</td>
                     <td>TTYT Quận 12</td>
                 </tr>
                 <tr>
                     <th scope="row">10</th>
-                    <td>Nguyễn Văn X</td>
+                    <td>
+                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
+                        <span class="name">Nguyễn Văn A</span>
+                    </td>
                     <td>2004</td>
                     <td>F2</td>
                     <td>Tại nhà</td>
@@ -175,9 +203,138 @@
         </table>
     </section>
 
+    <div id="pagination" class="d-flex justify-content-end me-5">
+        <span id="row-in-table" class="d-flex align-items-center">
+            <span>Số dòng/trang</span>
+            <div class="dropup me-4">
+                <button class="btn btn-link dropdown-toggle" type="button" id="row-select" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    10
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-sm-start" aria-labelledby="row-select">
+                    <li><a class="dropdown-item" href="#">5</a></li>
+                    <li><a class="dropdown-item" href="#">10</a></li>
+                </ul>
+            </div>
+        </span>
+        <span id="display-count" class="ms-3 me-5 d-flex align-items-center">
+            <span class="me-3">Hiển thị 1-10 trên 1000</span>
+            <i class="fa-solid fa-angle-left me-3"></i>
+            <i class="fa-solid fa-angle-right pe-2"></i>
+        </span>
+    </div>
+
+
+    <!-- Modal to add people -->
+    <div class="modal fade" id="add-people-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="add-people-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="add-people-modal-label">Thêm người bệnh</h5>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="container-fluid mx-2">
+                            <div class="row py-3">
+                                <div class="col" id="add-people-name">
+                                    <label for="people-name" class="form-label">Họ và tên</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-name" id="people-name"
+                                        placeholder="Nguyễn Văn A">
+                                </div>
+                                <div class="col" id="add-people-birthday">
+                                    <label for="people-birthday" class="form-label">Ngày tháng năm sinh</label>
+                                    <br />
+                                    <input type="date" class="form-control" name="people-birthday" id="people-birthday">
+                                </div>
+                                <div class="col" id="add-people-gender">
+                                    <label for="people-gender" class="form-label">Giới tính</label>
+                                    <br />
+                                    <select name="people-gender" id="people-gender" class="form-select">
+                                        <option value="1" selected>Nam</option>
+                                        <option value="2">Nữ</option>
+                                        <option value="0">Khác</option>
+                                    </select>
+                                </div>
+                                <div class="col" id="add-people-state">
+                                    <label for="people-state" class="form-label">Tình trạng</label>
+                                    <br />
+                                    <select name="people-state" id="people-state" class="form-select">
+                                        <option value="0" selected>F0</option>
+                                        <option value="1">F1</option>
+                                        <option value="2">F2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col" id="add-people-address">
+                                    <label for="people-adress" class="form-label">Địa chỉ</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-adress" id="people-adress"
+                                        placeholder="227 Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh">
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col" id="add-people-id">
+                                    <label for="people-id" class="form-label">Số CMND/CCCD</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="people-id" id="people-id"
+                                        placeholder="Nhập số CMND/CCCD">
+                                </div>
+                                <div class="col" id="add-people-treatment-place">
+                                    <label for="people-treatment-place" class="form-label">Nơi điều trị/cách ly</label>
+                                    <br/>
+                                    <select name="people-treatment-place" id="people-treatment-place" class="form-select">
+                                        <option value="q1" selected>TTYT quận 1</option>
+                                        <option value="q2">TTYT quận 2</option>
+                                        <option value="q3">TTYT quận 3</option>
+                                        <option value="q4">TTYT quận 4</option>
+                                        <option value="q5">TTYT quận 5</option>
+                                        <option value="q6">TTYT quận 6</option>
+                                        <option value="q7">TTYT quận 7</option>
+                                        <option value="q8">TTYT quận 8</option>
+                                        <option value="q9">TTYT quận 9</option>
+                                        <option value="q10">TTYT quận 10</option>
+                                        <option value="q11">TTYT quận 11</option>
+                                        <option value="q12">TTYT quận 12</option>
+                                        <option value="qtb">TTYT quận Tân Bình</option>
+                                        <option value="qbt">TTYT quận Bình Tân</option>
+                                        <option value="tptd">TTYT thành phố Thủ Đức</option>
+                                        <option value="hnb">TTYT huyện Nhà Bè</option>
+                                        <option value="hcg">TTYT huyện Cần Giờ</option>
+                                        <option value="hbc">TTYT huyện Bình Chánh</option>
+                                        <option value="hcc">TTYT huyện Củ Chi</option>
+                                        <option value="hhm">TTYT huyện Hóc Môn</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col" id="add-related-people">
+                                <label for="related-people" class="form-label">Người liên quan</label>
+                                <br/>
+                                <textarea class="form-control" name="related-people" id="related-people" rows="1"></textarea>
+                                <br/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script>
+        $('#people-birthday').datetime
+    </script>
 </body>
 
 </html>
