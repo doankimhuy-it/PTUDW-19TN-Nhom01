@@ -51,6 +51,10 @@ body {
     background-color: #C1C5C9;
 }
 
+#sort-menu, #filter-menu {
+    width: 15rem;
+}
+
 /* #sub-nav .subnav-content {
     list-style-type: none;
     display: none;
