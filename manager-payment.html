@@ -51,10 +51,14 @@
                     </li>
                 </ul>
                 <div class="d-flex me-5">
-                    <i class="fas fa-user-circle"></i>
+                    <!-- <i class="fas fa-user-circle"></i> -->
                     <div class="dropdown ms-2">
-                        <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
-                            aria-expanded="false"></a>
+                        <!-- <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
+                            aria-expanded="false"></a> -->
+                        <button class="btn btn-link dropdown-toggle" type="button" id="account-control"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill">
+                        </button>
                     
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
                             <li><a class="dropdown-item" href="#">Cài đặt tài khoản</a></li>
@@ -78,18 +82,16 @@
             <button class="btn btn-link text-center">
                 <span><i class="fa-solid fa-magnifying-glass"></i> Tìm</span>
             </button>
+            <span>
+                <input class="form-control" type="text" name="find-people-inp" id="find-people-inp" hidden>
+            </span>
 
             <button class="btn btn-link text-center">
-                <!-- <span><i class="fa-solid fa-arrow-down-a-z"></i> Sắp xếp</span> -->
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" id="accountOption" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <span><i class="fa-solid fa-arrow-down-a-z"></i> Sắp xếp</span></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
-                        <!-- <li class="dropdown-item">F0</li>
-                        <li class="dropdown-item">F1</li>
-                        <li class="dropdown-item">F2</li>
-                        <li class="dropdown-item">F3</li> -->
                         <li class="dropdown-item">
                             <div id="Filter-type">
                                 <label for="filter-type">Sắp xếp theo </label>
@@ -119,10 +121,6 @@
                             aria-expanded="false">
                             <span><i class="fa fa-filter"></i> Lọc</span></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountOption">
-                        <!-- <li class="dropdown-item">Họ tên</li>
-                        <li class="dropdown-item">Năm sinh</li>
-                        <li class="dropdown-item">Tình trạng</li>
-                        <li class="dropdown-item">Nơi điều trị</li> -->
                         <li class="dropdown-item">
                             <div id="Filter-type">
                                 <label for="filter-type">Sắp xếp theo </label>
@@ -147,6 +145,8 @@
                     </ul>
                 </div>
             </button>
+
+            
         </div>
         
     </div>
@@ -162,9 +162,11 @@
             </div>
 
             <div class="col-2" id="submit-btn">
-                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" 
-                    data-bs-target="#confirm-modal" data-bs-whatever="Đã thay đổi hạn mức thanh toán tối thiểu">
-                    <span>Xác nhận</span></button>
+                <button type="submit" class="btn btn-primary text-center" data-bs-toggle="modal" 
+                    data-bs-target="#confirm-modal" 
+                    data-bs-whatever="Đã thay đổi hạn mức thanh toán tối thiểu">
+                    <span>Xác nhận</span>
+                </button>
             </div>
         </form>
     </div>
@@ -311,7 +313,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="confirm-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-2"
+    <div class="modal fade" id="confirm-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="confirm-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">

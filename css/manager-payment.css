@@ -37,12 +37,18 @@ body {
     padding-bottom: 0.1rem;
 }
 
-#submit-btn {
+/* #submit-btn {
     height: 100%;
+} */
+#info-table {
+    border-radius: 0.5rem !important;
+    max-width: 90% !important;
+    overflow: hidden;
+    padding: 0;
 }
 
 #info-table thead {
-    background-color: #707683;
+    background-color: #C1C5C9;
 }
 
 /* #sub-nav .subnav-content {
