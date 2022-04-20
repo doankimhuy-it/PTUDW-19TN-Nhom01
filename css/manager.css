@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 .btn-primary {
@@ -97,6 +98,11 @@ ul li {
     color: #707683;
 }
 
-#sort-menu {
-    width: 16rem;
+#sort-menu, #filter-menu {
+    width: 15rem;
+}
+
+a {
+    text-decoration: none;
+    color: #707683;
 }
