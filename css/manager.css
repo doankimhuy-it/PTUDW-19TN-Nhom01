@@ -6,11 +6,12 @@ body {
 
 .btn-primary {
     background-color: #F18701;
-    border: 0;
+    border: none;
 }
 
 .btn-link {
     text-decoration: none;
+    border: none;
     color: black;
 }
 
@@ -23,18 +24,25 @@ body {
     color: black;
 }
 
+.dropdown-item-text {
+    font-size: 0.8rem;
+    color: #707683;
+}
+
 #sub-nav {
     background-color: #B3D6FF;
 }
 
-#sub-nav button, #add-related-people-btn {
+#sub-nav button,
+#add-related-people-btn,
+#add-treatment-history-btn,
+#find-people-inp {
     background-color: #E5EEFF;
     color: #707683;
     font-size: 0.8rem;
     border-radius: 0.2rem;
     margin: 0.2rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    padding: 0.1rem 0.5rem;
 }
 
 #info-table {
@@ -85,6 +93,10 @@ ul li {
 
 .btn-secondary {
     background-color: #E9EAEF;
-    border: 0;
+    border: none;
     color: #707683;
+}
+
+#sort-menu {
+    width: 16rem;
 }
