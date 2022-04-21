@@ -44,3 +44,13 @@ body {
 #sub-nav #sp-left-btn .dropdown-item-text {
     padding: 0;
 }
+
+.group-items-description {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.group-items-description p {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
