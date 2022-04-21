@@ -10,7 +10,8 @@ body {
     border: none;
 }
 
-.btn-link {
+.btn-link,
+.nav-link {
     text-decoration: none;
     border: none;
     color: black;
@@ -66,7 +67,8 @@ tbody tr {
     height: 3.3rem;
 }
 
-th:nth-child(1), td:nth-child(1) {
+th:nth-child(1),
+td:nth-child(1) {
     text-align: center;
 }
 
@@ -98,11 +100,12 @@ ul li {
     color: #707683;
 }
 
-#sort-menu, #filter-menu {
+#sort-menu,
+#filter-menu {
     width: 15rem;
 }
 
-a {
+.pagination {
     text-decoration: none;
     color: #707683;
 }
