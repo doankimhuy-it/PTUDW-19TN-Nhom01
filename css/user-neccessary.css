@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-primary {
+    background-color: #F18701;
+    border: 0;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #F18701;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: black;
+}
+
+#sub-nav {
+    background-color: #B3D6FF;
+}
+
+#sub-nav button {
+    background-color: #E5EEFF;
+    color: #707683;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 0.2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+#sort-menu, #filter-menu {
+    width: 15rem;
+}
+
+#sub-nav #sp-left-btn .dropdown-item-text {
+    padding: 0;
+}
+
+.group-items-description {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.group-items-description p {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
