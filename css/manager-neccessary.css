@@ -41,16 +41,33 @@ body {
     width: 15rem;
 }
 
-#sub-nav #sp-left-btn .dropdown-item-text {
+#sub-nav #sp-left-group-btn .dropdown-item-text,
+#sub-nav #sp-left-group-btn .dropdown-item-text {
     padding: 0;
 }
 
-.group-items-description {
+.group-items-description,
+.product-items-description {
     text-align: left;
     font-size: 0.8rem;
 }
 
-.group-items-description p {
+.group-items-description p,
+.product-items-description p {
     margin-top: 4px;
     margin-bottom: 8px;
+}
+
+#sp-left-product-btn {
+    display: none;
+}
+
+#neccessary-product {
+    display: none;
+}
+
+#add-img, #add-product-img {
+    background-color: #707683;
+    width: 10rem;
+    height: 15rem;
 }

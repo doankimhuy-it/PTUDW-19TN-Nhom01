@@ -70,7 +70,7 @@
     </nav>
 
     <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
-        <div id="sp-left-btn">
+        <div id="sp-left-group-btn">
             <span class="dropdown">
                 <button class="dropdown-toggle btn btn-link" role="button" id="neccessary-items" data-bs-toggle="dropdown"
                     aria-expanded="false"> <span>Gói</span>
@@ -78,23 +78,50 @@
 
                 <ul class="dropdown-menu" aria-labelledby="neccessary-items">
                     <li class="dropdown-item-text">
-                        <a href="#" class="dropdown-item">Gói</a>
+                        <a href="#" class="dropdown-item" onclick="switchProductToGroup()">Gói</a>
                     </li>
                     <li class="dropdown-item-text">
-                        <a href="#" class="dropdown-item">Sản phẩm</a>
+                        <a href="#" class="dropdown-item" onclick="switchGroupToProduct()">Sản phẩm</a>
                     </li>
                 </ul>
             </span>
 
             <button id="add-btn" class="btn btn-link text-center" data-bs-toggle="modal" 
-                data-bs-target="#send-request-modal" data-bs-whatever="Đã gửi yêu cầu thanh toán thành công">
+                data-bs-target="#add-group-modal" data-bs-whatever="Thêm gói">
+                <span> Thêm</span>
+            </button>
+
+            <button id="delete-btn" class="btn btn-link text-center" data-bs-toggle="modal" 
+                data-bs-target="#send-request-modal" data-bs-whatever="Xóa gói">
+            <span> Xóa</span>
+        </button>
+        </div>
+
+        <div id="sp-left-product-btn">
+            <span class="dropdown">
+                <button class="dropdown-toggle btn btn-link" role="button" id="neccessary-items" data-bs-toggle="dropdown"
+                    aria-expanded="false"> <span>Sản phẩm</span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="neccessary-items">
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchProductToGroup()">Gói</a>
+                    </li>
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchGroupToProduct()">Sản phẩm</a>
+                    </li>
+                </ul>
+            </span>
+
+            <button id="add-btn" class="btn btn-link text-center" data-bs-toggle="modal" 
+                data-bs-target="#add-product-modal" data-bs-whatever="Thêm sản phẩm">
                 <span> Thêm</span>
             </button>
 
             <button id="delete-btn" class="btn btn-link text-center" data-bs-toggle="modal" 
                 data-bs-target="#send-request-modal" data-bs-whatever="Đã gửi yêu cầu thanh toán thành công">
             <span> Xóa</span>
-        </button>
+            </button>
         </div>
 
         <div id="sp-right-btn">
@@ -231,11 +258,173 @@
         </div>
     </div>
 
+    <div id="neccessary-product" class="container-fluid">
+        <div class="flex-row d-flex justify-content-around py-5">
+            <div class="product-items">
+                <button class="border border-1  btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="product-items">
+                <button class="border border-1 btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="product-items">
+                <button class="border border-1 btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-row d-flex justify-content-around py-5">
+            <div class="product-items">
+                <button class="border border-1  btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="product-items">
+                <button class="border border-1 btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="product-items">
+                <button class="border border-1 btn btn-link">
+                    <img src="./img/product.png" alt="product" width="200" height="200">
+                    <div class="product-items-description">
+                        <p>Bàn chải đánh răng nhiều màu</p>
+                        <p>GIÁ: 8000VND</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-group-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="add-group-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="add-group-modal-label">Thêm gói</h5>
+                </div>           
+
+                <form>
+                    <div class="modal-body container-fluid row mx-2">
+                        <div class="col-6">
+                            <button id="add-img" class="col-6 form-control">
+                                <span><i class="fa-solid fa-circle-plus"></i></span>
+                            </button>
+                        </div>
+                       
+
+                       <div class="col-6">
+                            <input type="text" name="group-name" placeholder="Đặt tên gói sản phẩm" class="border border-1 py-2">
+                            
+                            <div class="number d-flex justtify-content-between">
+                                <span>
+                                    <button onclick=""><i class="fa-solid fa-circle-plus"></i></button>
+                                    <input type="text" name="number-of-product-in-group" 
+                                        id="number-of-product-in-group" placeholder="0" class="border border-1" size="2">
+                                    <button onclick=""><i class="fa-solid fa-circle-minus"></i></button>
+                                </span>
+
+                                <input type="text" name="product-name" placeholder="Tên sản phẩm" size="10">
+                            </div>
+
+                            <div>
+                                <button>
+                                    <span>Thêm sản phẩm <i class="fa-solid fa-circle-plus"></i></span>
+                                </button>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Giá:
+                                    <input type="text" name="price" id="group-price" placeholder="0.000" size="4">
+                                    VND/Gói/Ngày
+                                </span>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Thêm</button>
+                       </div>
+                    </div>
+
+                    <div class="modal-footer" hidden="true">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-product-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="add-product-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="add-product-modal-label">Thêm gói</h5>
+                </div>           
+
+                <form>
+                    <div class="modal-body container-fluid d-flex justify-content-evenly mx-2 border border-1">
+                       <button id="add-product-img">
+                           <span><i class="fa-solid fa-circle-plus"></i></span>
+                       </button>
+
+                       <div>
+                            <input type="text" name="product-name" placeholder="Đặt tên sản phẩm" class="border border-1 py-2">
+
+                            <div class="py-2">
+                                <span>
+                                    Giá:
+                                    <input type="text" name="price" id="product-price" placeholder="0.000">
+                                    VND/Cái
+                                </span>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Thêm</button>
+                       </div>
+                    </div>
+
+                    <div class="modal-footer" hidden="true">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/999d2cf8a8.js" crossorigin="anonymous"></script>
+
+    <script src="./js/manager-neccessary.js"></script>
 </body>
 </html>
