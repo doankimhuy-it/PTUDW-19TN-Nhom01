@@ -15,7 +15,7 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/Admin-UserManager.css">
-    <title>Manager Payment</title>
+    <title>Admin-TreatmentPlace</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -122,15 +122,51 @@
                 </div>
             
 
-                <form>
-                    <div class="modal-body container-fluid mx-2">
-                        <h3 class="text-center">Đã thêm nơi điều trị/cách ly thành công</h3>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="container-fluid mx-2 d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xong</button>
+                <form id="add-people-info">
+                    <div class="modal-body">
+                        <div class="container-fluid mx-2">
+                            <div class="row my-3">
+                                <div class="col" id="add-people-name-group">
+                                    <label for="add-people-name" class="form-label text-nowrap">Tên</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-name" id="add-people-name"
+                                        placeholder="Trung tâm y tế quận 5">
+                                </div>
+                               
+                            </div>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-account-group">
+                                    <label for="add-people-account" class="form-label">Số lượng tiếp nhận tối đa</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-account"
+                                        id="add-people-account"
+                                        placeholder="5000">
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col" id="add-people-account-group">
+                                    <label for="add-people-account" class="form-label">Số lượng tiếp nhận hiện tại</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-account"
+                                        id="add-people-account"
+                                        placeholder="1000">
+                                </div>
+                            </div>
+                            
+                        
                         </div>
                     </div>
+
+                              
+
+                    <div class="modal-footer  border-0 d-flex justify-content-around">
+                        <button type="button" class="btn btn-secondary col-7" data-bs-dismiss="modal">Hủy</button> 
+                    </div>
+                    <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
+                        <button type="submit" form="add-people-info" class="btn btn-primary col-7">Thêm</button>
+                    </div>
+
                 </form>
             </div>
         </div>
