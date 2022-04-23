@@ -6,11 +6,12 @@
 
 #login{
     display: flex;
+    margin-top: 4rem;
 }
 
 .input-field{
     display: inline-block;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 #login-input{
@@ -38,12 +39,10 @@
 
 #login-text{
     color: #F18701;
-    font-weight: bold;
-    font-family: 'Roboto';
+    font-family: 'Arial';
 }
 
 #submit-login{
-    padding: 1rem;
     background-color: #F18701;
     color: white;
 }
