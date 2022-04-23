@@ -19,3 +19,15 @@ function switchProductToGroup() {
     ProductIDBtn.style.display = 'none';
     productTable.style.display = 'none';
 }
+
+function increaseNumberInProductTable() {
+    var productNumber = document.getElementById("product-number")
+    productNumber.setAttribute('value', productNumber.getAttribute('value') - 0 + 1)
+}
+
+function decreaseNumberInProductTable() {
+    var productNumber = document.getElementById("product-number")
+    if (productNumber.getAttribute('value') > 0) {
+        productNumber.setAttribute('value', productNumber.getAttribute('value') - 1)
+    }
+}
