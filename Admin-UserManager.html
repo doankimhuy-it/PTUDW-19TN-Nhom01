@@ -124,24 +124,83 @@
 
    
 
+
+  <!-- Modal to add people -->
+
     <div class="modal fade" id="send-request-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="send-request-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog  modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header" hidden="true">
                     <h5 class="modal-title" id="send-request-modal-label">Gửi xác nhận yêu cầu</h5>
                 </div>
             
 
-                <form>
-                    <div class="modal-body container-fluid mx-2">
-                        <h3 class="text-center">Đã thêm người thành công</h3>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="container-fluid mx-2 d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xong</button>
+                <form id="add-people-info">
+                    <div class="modal-body">
+                        <div class="container-fluid mx-2">
+                            <div class="row my-3">
+                                <div class="col" id="add-people-name-group">
+                                    <label for="add-people-name" class="form-label text-nowrap">Họ và tên</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-name" id="add-people-name"
+                                        placeholder="Nguyễn Văn A">
+                                </div>
+                               
+                            </div>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-account-group">
+                                    <label for="add-people-account" class="form-label">Tên đăng nhập</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-account"
+                                        id="add-people-account"
+                                        placeholder="qtv3dethuong">
+                                </div>
+                            </div>
+                            <div class="row my-3">
+
+                                <div class="col" id="add-people-treatment-place-group">
+                                    <label for="add-people-treatment-place" class="form-label">Quyền hạn</label>
+                                    <br />
+                                    <select name="add-people-treatment-place" id="add-people-treatment-place"
+                                        class="form-select">
+                                        <option value="Full" selected>Full</option>
+                                        <option value="Restricted">Restricted</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col" id="add-people-password-group">
+                                    <label for="add-people-password" class="form-label">Mật khẩu</label>
+                                    <br />
+                                    <input type="password" class="form-control" name="add-people-password"
+                                        id="add-people-password"
+                                        placeholder="**********">
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col" id="add-people-repassword-group">
+                                    <label for="add-people-repassword" class="form-label">Nhập Lại Mật khẩu</label>
+                                    <br />
+                                    <input type="repassword" class="form-control" name="add-people-repassword"
+                                        id="add-people-repassword"
+                                        placeholder="**********">
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                              
+
+                    <div class="modal-footer  border-0 d-flex justify-content-around">
+                        <button type="button" class="btn btn-secondary col-7" data-bs-dismiss="modal">Hủy</button> 
+                    </div>
+                    <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
+                        <button type="submit" form="add-people-info" class="btn btn-primary col-7">Thêm</button>
+                    </div>
+
                 </form>
             </div>
         </div>
