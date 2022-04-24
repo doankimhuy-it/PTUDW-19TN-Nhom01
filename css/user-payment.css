@@ -6,10 +6,18 @@ body {
 
 .btn-primary {
     background-color: #F18701;
-    border: 0;
+    border: none;
 }
 
 .btn-link {
     text-decoration: none;
     color: black;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #E9EAEF;
+    text-decoration: none;
+    color: black;
+    border: none;
 }
