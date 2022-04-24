@@ -31,13 +31,14 @@ body {
     background-color: #E5EEFF;
     color: #707683;
     font-size: 0.8rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     margin: 0.2rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
 }
 
-#sort-menu, #filter-menu {
+#sort-menu,
+#filter-menu {
     width: 15rem;
 }
 
@@ -66,7 +67,8 @@ body {
     display: none;
 }
 
-#add-img, #add-product-img {
+#add-img,
+#add-product-img {
     background-color: #707683;
     width: 10rem;
     height: 15rem;
