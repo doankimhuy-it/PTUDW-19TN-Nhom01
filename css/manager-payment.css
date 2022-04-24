@@ -49,6 +49,10 @@ body {
     background-color: #C1C5C9;
 }
 
+tbody {
+    background-color: #F5F6F8;
+}
+
 #sort-menu,
 #filter-menu {
     width: 15rem;
