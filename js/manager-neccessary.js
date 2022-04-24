@@ -31,3 +31,13 @@ function decreaseNumberInProductTable() {
         productNumber.setAttribute('value', productNumber.getAttribute('value') - 1)
     }
 }
+
+let findPeopleBtn = document.getElementById("find-btn")
+let findPeopleInp = document.getElementById("find-inp")
+
+findPeopleBtn.onclick = () => {
+    if (findPeopleInp.hasAttribute("hidden")) {
+        findPeopleBtn.setAttribute("hidden", "");
+        findPeopleInp.removeAttribute("hidden");
+    }
+}

@@ -6,12 +6,13 @@ body {
 
 .btn-primary {
     background-color: #F18701;
-    border: 0;
+    border: none;
 }
 
 .btn-link {
     text-decoration: none;
     color: black;
+    border: none;
 }
 
 .dropdown-menu a:hover {
@@ -27,19 +28,16 @@ body {
     background-color: #B3D6FF;
 }
 
-#sub-nav button {
+#sub-nav button,
+#find-people-inp {
     background-color: #E5EEFF;
     color: #707683;
     font-size: 0.8rem;
     border-radius: 0.2rem;
     margin: 0.2rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    padding: 0.1rem 0.5rem;
 }
 
-/* #submit-btn {
-    height: 100%;
-} */
 #info-table {
     border-radius: 0.5rem !important;
     max-width: 90% !important;
@@ -56,16 +54,17 @@ body {
     width: 15rem;
 }
 
-/* #sub-nav .subnav-content {
-    list-style-type: none;
-    display: none;
+.pagination {
+    text-decoration: none;
+    color: #707683;
 }
 
-#sub-nav:hover .subnav-content {
-    display: block;
-    background-color: #F18701;
-} */
+.name {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-/* #Filter-type {
-    width: 200px;
-} */
+#pagination {
+    color: #707683;
+}

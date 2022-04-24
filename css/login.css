@@ -1,72 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-#LogoText{
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+
+#logo {
     font-family: 'Ribeye', cursive;
 }
 
-#login{
-    display: flex;
-    margin-top: 4rem;
+#login {
+    margin-top: 8rem !important;
 }
 
-.input-field{
-    display: inline-block;
-    margin-top: 1.5rem;
-}
-
-#login-input{
-    flex: 5;
-}
-
-#field-image{
-    flex: 5;
-}
-
-#image-stop{
+#image-stop {
     width: 50%;
     height: auto;
 }
 
-#role{
+#role {
     position: absolute;
-    left: 10px;
-    bottom: 10px;
+    left: 1rem;
+    bottom: 1rem;
+    width: 10rem;
 }
 
-.text-field{
-    width: 75%;
-}
-
-#login-text{
+#login-text {
     color: #F18701;
-    font-family: 'Arial';
 }
 
-#submit-login{
+#submit-login {
     background-color: #F18701;
     color: white;
-}
-
-select:focus > option:checked{ 
-    background: #F18701 !important;
-    color: white !important;
+    border: none;
 }
 
 @media screen and (max-width: 1000px) {
-    #field-image{
+    #field-image {
         display: none;
     }
 
-    #login{
+    #login {
         margin-top: 1rem;
     }
 }
 
-#row{
+#row {
     width: 30%;
-}
-
-#Logo-container{
-    display: flex;
-    justify-content: center;
 }

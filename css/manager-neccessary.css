@@ -6,12 +6,13 @@ body {
 
 .btn-primary {
     background-color: #F18701;
-    border: 0;
+    border: none;
 }
 
 .btn-link {
     text-decoration: none;
     color: black;
+    border: none;
 }
 
 .dropdown-menu a:hover {
@@ -27,14 +28,14 @@ body {
     background-color: #B3D6FF;
 }
 
-#sub-nav button {
+#sub-nav button,
+#find-inp {
     background-color: #E5EEFF;
     color: #707683;
     font-size: 0.8rem;
     border-radius: 0.2rem;
     margin: 0.2rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    padding: 0.1rem 0.5rem;
 }
 
 #sort-menu,
@@ -73,15 +74,6 @@ body {
     width: 10rem;
     height: 15rem;
 }
-
-/* #fix-product-modal .form-control, 
-#fix-group-modal .form-control,
-#add-group-modal .form-control,
-#add-product-modal .form-control {
-    display: inline;
-    padding: 0;
-    width: 5%;
-} */
 
 .minus{
     border-radius: 50%;
@@ -142,9 +134,4 @@ body {
     height: 2rem;
     line-height: 2rem;
     text-align: center;
-}
-
-.info{
-    display: inline-block;
-    width: auto;
 }
