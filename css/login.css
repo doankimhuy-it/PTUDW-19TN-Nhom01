@@ -5,7 +5,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-
 #logo {
     font-family: 'Ribeye', cursive;
 }
@@ -30,10 +29,10 @@ body {
     color: #F18701;
 }
 
-#submit-login {
-    background-color: #F18701;
-    color: white;
-    border: none;
+.btn-primary {
+    background-color: #F18701 !important;
+    color: white !important;
+    border: none !important;
 }
 
 @media screen and (max-width: 1000px) {
