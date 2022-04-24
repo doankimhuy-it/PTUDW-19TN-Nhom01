@@ -37,6 +37,15 @@ body {
     padding-bottom: 0.1rem;
 }
 
+#sp-left-product-btn, #neccessary-product {
+    display: none;
+}
+
+#sub-nav #sp-left-group-btn .dropdown-item-text,
+#sub-nav #sp-left-product-btn .dropdown-item-text {
+    padding: 0;
+}
+
 #sort-menu,
 #filter-menu {
     width: 15rem;
