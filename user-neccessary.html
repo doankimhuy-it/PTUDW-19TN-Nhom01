@@ -290,7 +290,8 @@
 
 
  <!-- Modal to pay for neccessary-->
-    <div class="modal fade" id="fix-group-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+ <!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
+    <div class="modal fade" id="fix-group-modal"  tabindex="-1"
     aria-labelledby="fix-group-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -309,40 +310,58 @@
 
                         <div>
                             <div class="row">
-                                <div class="row col">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
+                                <div class="info">
+                                    <button type="button" onclick="increase('first-product')" class="adjust">
+                                        <p class="plus">
+                                            +
+                                        </p>
+                                    </button>
                                     <input type="text" name="first-product" 
-                                        id="first-product" placeholder="2" class="border border-1 col" 
-                                        size="2" class="form-control">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
+                                        id="first-product" placeholder="2" 
+                                        size="2" class="form-control quantity">
+                                    <button type="button" onclick="decrease('first-product')" class="adjust">
+                                        <p class="minus">-</p>
+                                    </button>
                                 </div>
-                                <p class="col">Bàn chải đánh răng</p>
+                                <p class="name">Bàn chải đánh răng</p>
                             </div>
                         </div>
 
                         <div>
                             <div class="row">
-                                <div class="row col">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                    <input type="text" name="second-product-number" 
-                                        id="second-product-number" placeholder="2" class="border border-1 col" 
-                                        size="2" class="form-control">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                </div>                                   
-                                <p class="col">Tuýp kem đánh răng</p>
+                                <div class="info">
+                                    <button type="button" onclick="increase('second-product')" class="adjust">
+                                        <p class="plus">
+                                            +
+                                        </p>
+                                    </button>
+                                    <input type="text" name="first-product" 
+                                        id="second-product" placeholder="2" 
+                                        size="2" class="form-control quantity">
+                                    <button type="button" onclick="decrease('second-product')" class="adjust">
+                                        <p class="minus">-</p>
+                                    </button>
+                                </div>
+                                <p class="name">Tuýp kem đánh răng</p>
                             </div>
                         </div>
 
                         <div>
                             <div class="row">
-                                <div class="row col">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                    <input type="text" name="third-product-number" 
-                                        id="third-product-number" placeholder="2" class="border border-1 col" 
-                                        size="2" class="form-control">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
+                                <div class="info">
+                                    <button type="button" onclick="increase('third-product')" class="adjust">
+                                        <p class="plus">
+                                            +
+                                        </p>
+                                    </button>
+                                    <input type="text" name="first-product" 
+                                        id="third-product" placeholder="2" 
+                                        size="2" class="form-control quantity">
+                                    <button type="button" onclick="decrease('third-product')" class="adjust">
+                                        <p class="minus">-</p>
+                                    </button>
                                 </div>
-                                <p class="col">Chai nước súc miệng</p>
+                                <p class="name">Chai nước súc miệng</p>
                             </div>
                         </div>
 
@@ -353,14 +372,24 @@
                             <span class="col">VND/Gói/Ngày</span>
                         </div>
 
-                        <div class="row" style="width: 20rem;"> 
+                        <div class="row" style="width: 20rem; margin-top:1rem;"> 
                             <span class="col">Số lượng gói:</span> 
-                            <div class="row col" style="width: fit-content;">
-                                <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                <input type="text" name="number-of-group" 
-                                    id="number-of-group-fix" value="10" class="border border-1 form-control col" 
-                                    size="2">
-                                <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
+                            <div style="display:inline-block; width: auto;">
+                                <div class="row">
+                                    <div class="info">
+                                        <button type="button" onclick="increase('numberPackage')" class="adjust">
+                                            <p class="plus">
+                                                +
+                                            </p>
+                                        </button>
+                                        <input type="text" name="first-product" 
+                                            id="numberPackage" placeholder="10" 
+                                            size="2" class="form-control quantity">
+                                        <button type="button" onclick="decrease('numberPackage')" class="adjust">
+                                            <p class="minus">-</p>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -382,5 +411,21 @@
         crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/999d2cf8a8.js" crossorigin="anonymous"></script>
+    <script>
+        function increase(id){
+            var text;
+            text=document.getElementById(id)
+            text.placeholder=parseInt(text.placeholder)+1
+        }
+
+        function decrease(id){
+            var text;
+            text=document.getElementById(id)
+            var res;
+            res=parseInt(text.placeholder)-1
+            if(res<0) return
+            text.placeholder=parseInt(text.placeholder)-1
+        }
+    </script>
 </body>
 </html>
