@@ -64,7 +64,7 @@ body {
     display: none;
 }
 
-#neccessary-product {
+#necessaries-product {
     display: none;
 }
 
@@ -75,7 +75,7 @@ body {
     height: 15rem;
 }
 
-.minus{
+.minus {
     border-radius: 50%;
     border: 1px solid red;
     color: red;
@@ -89,7 +89,7 @@ body {
     text-align: center;
 }
 
-.quantity{
+.quantity {
     border: none !important;
     display: inline !important;
     width: auto;
@@ -103,7 +103,7 @@ body {
 
 }
 
-.plus{
+.plus {
     border-radius: 50%;
     border: 1px solid lightgreen;
     color: lightgreen;
@@ -116,7 +116,7 @@ body {
     text-align: center;
 }
 
-.adjust{
+.adjust {
     display: inline-block;
     width: auto;
     border: none !important;
@@ -126,7 +126,7 @@ body {
     width: 2rem;
 }
 
-.name{
+.name {
     display: inline-block;
     width: auto;
     height: 2rem;
