@@ -42,7 +42,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="user-payment.html">
+                        <a class="nav-link active" aria-current="page" href="user-payment.html">
                             <button type="button" class="btn btn-link w-100">THANH TOÁN</button>
                         </a>
                     </li>
@@ -55,7 +55,8 @@
 
                             <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-sm-start"
                                 aria-labelledby="account-control">
-                                <li><a class="dropdown-item" href="index.html">Đăng xuất</a></li>
+                                <li><a class="dropdown-item" href="#">Cài đặt tài khoản</a></li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -65,15 +66,48 @@
     </nav>
 
     <div id="sub-nav" class="d-flex container-fluid align-items-center justify-content-between px-5">
-        <div id="sp-left-btn">
-
-
-            <button id="add-btn" class="btn btn-link text-center" data-bs-toggle="modal"
+        <div id="sp-left-group-btn">
+            <!-- <button id="add-btn" class="btn btn-link text-center" data-bs-toggle="modal"
                 data-bs-target="#send-request-modal" data-bs-whatever="Gói sản phẩm">
                 <span> Gói sản phẩm</span>
-            </button>
+            </button> -->
 
+            <span class="dropdown">
+                <button class="dropdown-toggle btn btn-link" role="button" id="necessary-items"
+                    data-bs-toggle="dropdown" aria-expanded="false"> <span>Gói sản phẩm</span>
+                </button>
 
+                <ul class="dropdown-menu" aria-labelledby="necessary-items">
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchProductToGroup()">Gói</a>
+                    </li>
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchGroupToProduct()">Sản phẩm</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+
+        <div id="sp-left-product-btn">
+            <!-- <button id="add-btn" class="btn btn-link text-center" data-bs-toggle="modal"
+                data-bs-target="#send-request-modal" data-bs-whatever="Gói sản phẩm">
+                <span> Gói sản phẩm</span>
+            </button> -->
+
+            <span class="dropdown">
+                <button class="dropdown-toggle btn btn-link" role="button" id="necessary-item" data-bs-toggle="dropdown"
+                    aria-expanded="false"> <span>Sản phẩm</span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="necessary-item">
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchProductToGroup()">Gói</a>
+                    </li>
+                    <li class="dropdown-item-text">
+                        <a href="#" class="dropdown-item" onclick="switchGroupToProduct()">Sản phẩm</a>
+                    </li>
+                </ul>
+            </span>
         </div>
 
         <div id="sp-right-btn">
@@ -145,7 +179,7 @@
 
     </div>
 
-    <div id="necessaries-group" class="container-fluid">
+    <div id="necessary-group" class="container-fluid">
         <div class="flex-row d-flex justify-content-around py-5">
             <div class="group-items">
                 <button class="border border-1  btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
@@ -211,32 +245,33 @@
         </div>
     </div>
 
-    <div id="necessaries-group" class="container-fluid">
+    <div id="necessary-product" class="container-fluid">
         <div class="flex-row d-flex justify-content-around py-5">
-            <div class="group-items">
-                <button class="border border-1  btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1  btn btn-link" data-bs-toggle="modal"
+                    data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
                 </button>
             </div>
 
-            <div class="group-items">
-                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
                 </button>
             </div>
 
-            <div class="group-items">
-                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
@@ -245,30 +280,31 @@
         </div>
 
         <div class="flex-row d-flex justify-content-around py-5">
-            <div class="group-items">
-                <button class="border border-1  btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1  btn btn-link" data-bs-toggle="modal"
+                    data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
                 </button>
             </div>
 
-            <div class="group-items">
-                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
                 </button>
             </div>
 
-            <div class="group-items">
-                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-group-modal">
+            <div class="product-items">
+                <button class="border border-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#fix-product-modal">
                     <img src="./img/product.png" alt="product" width="200" height="200">
-                    <div class="group-items-description">
+                    <div class="product-items-description">
                         <p>Bàn chải đánh răng nhiều màu</p>
                         <p>GIÁ: 8000VND</p>
                     </div>
@@ -277,9 +313,7 @@
         </div>
     </div>
 
-
-
-    <!-- Modal to pay for necessaries-->
+    <!-- Modal to pay for necessary-->
     <!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
     <div class="modal fade" id="fix-group-modal" tabindex="-1" aria-labelledby="fix-group-modal-label"
         aria-hidden="true">
@@ -353,10 +387,11 @@
                             </div>
 
                             <div class="row" style="width: 20rem;">
-                                <span class="col" style="width: 2rem;">Giá:</span>
+                                <!-- <span class="col" style="width: 2rem;">Giá:</span>
                                 <input type="text" name="price" id="group-price-fix" value="8.000" size="4"
                                     class="form-control col">
-                                <span class="col">VND/Gói/Ngày</span>
+                                <span class="col">VND/Gói/Ngày</span> -->
+                                <span class="col">Giá: <span id="group-price">8000</span> VND/Gói/Ngày</span>
                             </div>
 
                             <div class="row" style="width: 20rem; margin-top:1rem;">
@@ -372,6 +407,66 @@
                                             <input type="text" name="first-product" id="numberPackage" placeholder="10"
                                                 size="2" class="form-control quantity">
                                             <button type="button" onclick="decrease('numberPackage')" class="adjust">
+                                                <p class="minus">-</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xác nhận</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" hidden="true">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="fix-product-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="fix-product-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" hidden="true">
+                    <h5 class="modal-title" id="fix-product-modal-label">Sửa gói</h5>
+                </div>
+
+                <form>
+                    <div class="modal-body container-fluid row">
+                        <div id="fix-product-img" class="col-6 d-flex justify-content-center">
+                            <img src="./img/product.png" alt="group of product" width="200" height="200">
+                        </div>
+
+                        <div class="col-6">
+                            <div>
+                                <h3>Bàn chải đánh răng nhiều màu</h3>
+                            </div>
+
+                            <div>
+                                <div class="row" style="width: 20rem;">
+                                    <span class="col">Giá: <span id="product-price">8000</span>VND</span>
+                                    <!-- <input type="text" name="price" id="product-price-fix" value="8.000" 
+                                        size="4" class="form-control col"> -->
+                                    <!-- <span class="col">VND</span> -->
+                                </div>
+                            </div>
+
+                            <div class="row" style="width: 20rem; margin-top:1rem;">
+                                <span class="col">Số lượng:</span>
+                                <div style="display:inline-block; width: auto;">
+                                    <div class="row">
+                                        <div class="info">
+                                            <button type="button" onclick="increase('numberProduct')" class="adjust">
+                                                <p class="plus">
+                                                    +
+                                                </p>
+                                            </button>
+                                            <input type="text" name="numberProduct" id="numberProduct" placeholder="10"
+                                                size="2" class="form-control quantity">
+                                            <button type="button" onclick="decrease('numberProduct')" class="adjust">
                                                 <p class="minus">-</p>
                                             </button>
                                         </div>
@@ -413,6 +508,8 @@
             text.placeholder = parseInt(text.placeholder) - 1
         }
     </script>
+
+    <script src="./js/user-necessaries.js"></script>
 </body>
 
 </html>

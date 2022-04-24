@@ -37,7 +37,8 @@ body {
     padding-bottom: 0.1rem;
 }
 
-#sp-left-product-btn, #neccessary-product {
+#sp-left-product-btn,
+#necessary-product {
     display: none;
 }
 
