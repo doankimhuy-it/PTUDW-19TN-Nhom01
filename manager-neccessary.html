@@ -454,142 +454,120 @@
         </div>
     </div>
 
-    <div class="modal fade" id="fix-group-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="fix-group-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" hidden="true">
-                    <h5 class="modal-title" id="fix-group-modal-label">Sửa gói</h5>
-                </div>           
+    <!-- Modal to pay for neccessary-->
+ <!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
+ <div class="modal fade" id="fix-group-modal"  tabindex="-1"
+ aria-labelledby="fix-group-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-lg modal-dialog-centered">
+     <div class="modal-content">
+         <div class="modal-header" hidden="true">
+             <h5 class="modal-title" id="fix-group-modal-label">Sửa gói</h5>
+         </div>           
 
-                <form>
-                    <div class="modal-body container-fluid row">
-                       <div id="fix-group-img" class="col-6 d-flex justify-content-center">
-                           <img src="./img/product.png" alt="group of product" width="300" height="300">
-                       </div>
+         <form>
+             <div class="modal-body container-fluid row">
+                <div id="fix-group-img" class="col-6 d-flex justify-content-center">
+                    <img src="./img/product.png" alt="group of product" width="300" height="300">
+                </div>
 
-                       <div class="col-6">
-                            <h3>Gói vệ sinh răng miệng</h3>
+                <div class="col-6">
+                     <h3>Gói vệ sinh răng miệng</h3>
 
-                            <div>
-                                <div class="row">
-                                    <div class="row col">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                        <input type="text" name="first-product" 
-                                            id="first-product" placeholder="2" class="border border-1 col" 
-                                            size="2" class="form-control">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                    </div>
-                                    <p class="col">Bàn chải đánh răng</p>
-                                </div>
-                            </div>
+                     <div>
+                         <div class="row">
+                             <div class="info">
+                                 <button type="button" onclick="increase('first-product')" class="adjust">
+                                     <p class="plus">
+                                         +
+                                     </p>
+                                 </button>
+                                 <input type="text" name="first-product" 
+                                     id="first-product" placeholder="2" 
+                                     size="2" class="form-control quantity">
+                                 <button type="button" onclick="decrease('first-product')" class="adjust">
+                                     <p class="minus">-</p>
+                                 </button>
+                             </div>
+                             <p class="name">Bàn chải đánh răng</p>
+                         </div>
+                     </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="row col">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                        <input type="text" name="second-product-number" 
-                                            id="second-product-number" placeholder="2" class="border border-1 col" 
-                                            size="2" class="form-control">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                    </div>                                   
-                                    <p class="col">Tuýp kem đánh răng</p>
-                                </div>
-                            </div>
+                     <div>
+                         <div class="row">
+                             <div class="info">
+                                 <button type="button" onclick="increase('second-product')" class="adjust">
+                                     <p class="plus">
+                                         +
+                                     </p>
+                                 </button>
+                                 <input type="text" name="first-product" 
+                                     id="second-product" placeholder="2" 
+                                     size="2" class="form-control quantity">
+                                 <button type="button" onclick="decrease('second-product')" class="adjust">
+                                     <p class="minus">-</p>
+                                 </button>
+                             </div>
+                             <p class="name">Tuýp kem đánh răng</p>
+                         </div>
+                     </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="row col">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                        <input type="text" name="third-product-number" 
-                                            id="third-product-number" placeholder="2" class="border border-1 col" 
-                                            size="2" class="form-control">
-                                        <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                    </div>
-                                    <p class="col">Chai nước súc miệng</p>
-                                </div>
-                            </div>
+                     <div>
+                         <div class="row">
+                             <div class="info">
+                                 <button type="button" onclick="increase('third-product')" class="adjust">
+                                     <p class="plus">
+                                         +
+                                     </p>
+                                 </button>
+                                 <input type="text" name="first-product" 
+                                     id="third-product" placeholder="2" 
+                                     size="2" class="form-control quantity">
+                                 <button type="button" onclick="decrease('third-product')" class="adjust">
+                                     <p class="minus">-</p>
+                                 </button>
+                             </div>
+                             <p class="name">Chai nước súc miệng</p>
+                         </div>
+                     </div>
 
-                            <div class="row" style="width: 20rem;">
-                                <span class="col" style="width: 2rem;">Giá:</span>
-                                <input type="text" name="price" id="group-price-fix" value="8.000" 
-                                    size="4" class="form-control col">
-                                <span class="col">VND/Gói/Ngày</span>
-                            </div>
+                     <div class="row" style="width: 20rem;">
+                         <span class="col" style="width: 2rem;">Giá:</span>
+                         <input type="text" name="price" id="group-price-fix" value="8.000" 
+                             size="4" class="form-control col">
+                         <span class="col">VND/Gói/Ngày</span>
+                     </div>
 
-                            <div class="row" style="width: 20rem;"> 
-                                <span class="col">Số lượng gói:</span> 
-                                <div class="row col" style="width: fit-content;">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-plus"></i></button>
-                                    <input type="text" name="number-of-group" 
-                                        id="number-of-group-fix" value="10" class="border border-1 form-control col" 
-                                        size="2">
-                                    <button onclick="" class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                </div>
-                            </div>
+                     <div class="row" style="width: 20rem; margin-top:1rem;"> 
+                         <span class="col">Số lượng gói:</span> 
+                         <div style="display:inline-block; width: auto;">
+                             <div class="row">
+                                 <div class="info">
+                                     <button type="button" onclick="increase('numberPackage')" class="adjust">
+                                         <p class="plus">
+                                             +
+                                         </p>
+                                     </button>
+                                     <input type="text" name="first-product" 
+                                         id="numberPackage" placeholder="10" 
+                                         size="2" class="form-control quantity">
+                                     <button type="button" onclick="decrease('numberPackage')" class="adjust">
+                                         <p class="minus">-</p>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
 
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xác nhận</button>
-                       </div>
-                    </div>
+                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xác nhận</button>
+                </div>
+             </div>
 
-                    <div class="modal-footer" hidden="true">
-                        
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="fix-product-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="fix-product-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" hidden="true">
-                    <h5 class="modal-title" id="fix-product-modal-label">Sửa gói</h5>
-                </div>           
-
-                <form>
-                    <div class="modal-body container-fluid row">
-                       <div id="fix-product-img" class="col-6 d-flex justify-content-center">
-                           <img src="./img/product.png" alt="group of product" width="200" height="200">
-                       </div>
-
-                       <div class="col-6">
-                            <div>
-                                <h3>Bàn chải đánh răng nhiều màu</h3>
-                            </div>
-
-                            <div>
-                                <div class="row" style="width: fit-content;">
-                                    <span class="col">Giá:</span>
-                                    <input type="text" name="price" id="product-price-fix" value="8.000" 
-                                        size="4" class="form-control col">
-                                    <span class="col">VND</span>
-                                </div>
-                            </div>
-
-                            <div class="row" style="width: auto;">
-                                <span class="col">Số lượng: </span>
-                                <div class="col row" style="width: fit-content;">
-                                    <button class="form-control col">
-                                        <i class="fa-solid fa-circle-plus"></i></button>
-                                    <input type="text" name="first-product" 
-                                        id="product-number" value="2" class="border border-1 form-control col" 
-                                        size="2">
-                                    <button class="form-control col"><i class="fa-solid fa-circle-minus"></i></button>
-                                </div>
-                            </div>
-
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Xác nhận</button>
-                       </div>
-                    </div>
-
-                    <div class="modal-footer" hidden="true">
-                        
-                    </div>
-                </form>
-            </div>
-        </div>
+             <div class="modal-footer" hidden="true">
+                 
+             </div>
+         </form>
+     </div>
+ </div>
     </div>
 
 
@@ -600,5 +578,22 @@
     <script src="https://kit.fontawesome.com/999d2cf8a8.js" crossorigin="anonymous"></script>
 
     <script src="./js/manager-neccessary.js"></script>
+
+    <script>
+        function increase(id){
+            var text;
+            text=document.getElementById(id)
+            text.placeholder=parseInt(text.placeholder)+1
+        }
+
+        function decrease(id){
+            var text;
+            text=document.getElementById(id)
+            var res;
+            res=parseInt(text.placeholder)-1
+            if(res<0) return
+            text.placeholder=parseInt(text.placeholder)-1
+        }
+    </script>
 </body>
 </html>

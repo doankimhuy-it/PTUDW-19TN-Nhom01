@@ -80,3 +80,69 @@ body {
     padding: 0;
     width: 5%;
 } */
+
+.minus{
+    border-radius: 50%;
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    padding: 0 !important;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.quantity{
+    border: none !important;
+    display: inline !important;
+    width: auto;
+    height: 2rem;
+    width: 4rem;
+    font-size: 2rem;
+    padding: 0 !important;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+
+}
+
+.plus{
+    border-radius: 50%;
+    border: 1px solid lightgreen;
+    color: lightgreen;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    padding: 0 !important;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.adjust{
+    display: inline-block;
+    width: auto;
+    border: none !important;
+    background-color: white !important;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+}
+
+.name{
+    display: inline-block;
+    width: auto;
+    height: 2rem;
+    padding: 0 !important;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.info{
+    display: inline-block;
+    width: auto;
+}
