@@ -1,20 +1,71 @@
-const db=require("../config/database");
+require("dotenv").config();
+var mongoose = require("mongoose");
+var jwt = require("jsonwebtoken");
+const users = require("../models/user");
+const bcrypt = require("bcrypt");
 
 class Authorization {
 
+    middleware = (req, res, next) => {
+        if (
+            req.headers &&
+            req.headers.authorization &&
+            req.headers.authorization.split(" ")[0] == "Bearer"
+        ) {
+            jwt.verify(
+                req.headers.authorization.split(" ")[1],
+                process.env.SECRET_KEY,
+                function (err, decode) {
+                    if (err) {
+                        return res.status(200).json({
+                            code: 400,
+                            message: "Unauthorized user",
+                        });
+                    }
+                    req.user = decode;
+                    next();
+                }
+            );
+        } else {
+            // return unauthorized message
+            return res.status(200).json({
+                code: 400,
+                message: "Unauthorized user",
+            });
+        }
+    };
+
     login=async(req, res)=>{
+        console.log("login called");
         const username=req.body.username;
         const password=req.body.password
-        if(!username || !password){
+        const role=req.body.role;
+        if(!username || !password || !role){
             return res.status(200).json({
                 "code": 400,
                 "message": "Some information is missing"
             });
         }
-        const response = await db.query(
-            "SELECT * FROM usr WHERE username=$1 and password=$2", [req.body.username, req.body.password]
+        const user=await users.findOne({
+            username: username,
+            password: password,
+            role: role,
+        });
+        if(!user){
+            return res.status(200).json({
+                "code": 400,
+                "message": "Username or password incorrect"
+            });
+        }
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.SECRET_KEY
         );
-        res.status(200).send(response.rows);
+        return res.status(200).json({
+            "code": 0,
+            "message": "Successful.",
+            "data": token,
+        });
     }
 
     register=async (req, res)=>{
@@ -25,24 +76,22 @@ class Authorization {
                 "message": "Some information is missing"
             });
         }
-        const response = await db.query(
-            "SELECT * FROM usr WHERE username=$1", [username]
-        );
-        if(response.rows.length==0){
+        const user=await users.findOne({username: username});
+        if(!user){
             
             const password=req.body.password;
             const fullname=req.body.fullname;
             const phoneNumber=req.body.phoneNumber;
             const email=req.body.email;
-            if(!username || !password || !fullname || !phoneNumber || !email){
+            const role=req.body.role;
+            if(!username || !password || !fullname || !phoneNumber || !email || !role){
                 return res.status(200).json({
                     "code": 400,
                     "message": "Some information is missing"
                 });
             }
-            const insertResponse = await db.query(
-                "INSERT INTO usr (username, password, fullname, email, phoneNumber) VALUES ($1, $2, $3, $4, $5)", [username, password, fullname, email, phoneNumber]
-            );
+            const newUser=new users({username, password, fullname, phoneNumber, email, role});
+            await newUser.save();
             // console.log(insertResponse.rows);
             return res.status(200).json({
                 "code": 0,

@@ -3,8 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8080;
+const mongodb=require("./config/mongodb");
 
-// db.connect();
+mongodb.connect();
 
 // Middleware
 app.use(express.json());
