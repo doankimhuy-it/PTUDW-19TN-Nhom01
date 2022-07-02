@@ -42,26 +42,26 @@ class Authorization {
 
     login=async(req, res)=>{
         console.log("login called");
-        const username=req.body.username;
+        const idNumber=req.body.idNumber;
         const password=req.body.password
         const role=req.body.role;
 
-        console.log(username+" "+password+" "+role);
-        if(!username || !password || !role){
+        console.log(idNumber+" "+password+" "+role);
+        if(!idNumber || !password || !role){
             return res.status(200).json({
                 "code": 400,
                 "message": "Some information is missing"
             });
         }
         const user=await users.findOne({
-            username: username,
+            idNumber: idNumber,
             password: password,
             role: role,
         });
         if(!user){
             return res.status(200).json({
                 "code": 400,
-                "message": "Username or password incorrect"
+                "message": "Id number or password incorrect"
             });
         }
         const token = jwt.sign(
