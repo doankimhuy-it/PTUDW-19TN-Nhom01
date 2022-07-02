@@ -1,3 +1,5 @@
+
+
 let roleDropDown = document.getElementById("role");
 /* let loginBtn = document.getElementById("submit-login");
 
@@ -39,6 +41,31 @@ submitLogin.onclick=function(e){
     xhr.onreadystatechange = function() { // Call a function when the state changes.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             console.log(this.responseText); 
+            const res=JSON.parse(this.responseText);
+            if(res.code==0){
+                // localStorage.put("token", res.data);
+                document.cookie="token="+res.data+"; path=/";
+                
+                let dest = "";
+
+                let role = roleDropDown.value;
+                switch (role) {
+                    case "admin":
+                        dest = "admin-manager.html";
+                        break;
+                    case "manager":
+                        dest = "manager-patient.html";
+                        break;
+                    case "user":
+                        dest = "user-info.html";
+                        break;
+                }
+                document.location.href = dest;
+            }
+            else{
+                document.getElementById("error-notification").innerHTML=res.message;
+            }
+            
         }
     }
     // xhr.setRequestHeader("Access-Control-Allow-Origin", "*");

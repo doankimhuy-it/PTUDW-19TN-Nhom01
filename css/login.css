@@ -52,3 +52,11 @@ body {
 input::placeholder {
     overflow: visible;
 }
+
+#error-notification {
+    color: red;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-weight: bold;
+}

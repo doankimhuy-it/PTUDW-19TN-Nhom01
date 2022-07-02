@@ -8,12 +8,14 @@ class Authorization {
 
     middleware = (req, res, next) => {
         if (
-            req.headers &&
-            req.headers.authorization &&
-            req.headers.authorization.split(" ")[0] == "Bearer"
+            req.cookies &&
+            req.cookies.token 
+            // req.headers.authorization.split(" ")[0] == "Bearer"
         ) {
+            console.log(req.cookies.token);
             jwt.verify(
-                req.headers.authorization.split(" ")[1],
+                // req.headers.authorization.split(" ")[1],
+                req.cookies.token,
                 process.env.SECRET_KEY,
                 function (err, decode) {
                     if (err) {
@@ -40,7 +42,7 @@ class Authorization {
         const username=req.body.username;
         const password=req.body.password
         const role=req.body.role;
-        
+
         console.log(username+" "+password+" "+role);
         if(!username || !password || !role){
             return res.status(200).json({

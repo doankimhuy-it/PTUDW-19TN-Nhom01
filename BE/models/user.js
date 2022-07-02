@@ -20,7 +20,31 @@ const Users=new mongoose.Schema({
     },
     phoneNumber: {
         type: String,
-    }
+    },
+    address: {
+        type: String,
+    },
+    dayOfBirth: {
+        day: {
+            type: Number,
+        },
+        month: {
+            type: Number,
+        }, 
+        year: {
+            type: Number,
+        }
+    },
+    balance: {
+        type: Number,
+    },
+    paymentHistory: [
+        {
+            type: ObjectId,
+            ref: "PaymentHistory",
+        }
+    ]
+
 });
 
 module.exports = mongoose.model('Users', Users);
