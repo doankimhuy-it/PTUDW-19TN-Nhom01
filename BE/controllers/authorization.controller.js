@@ -21,7 +21,7 @@ class Authorization {
                     if (err) {
                         return res.status(200).json({
                             code: 400,
-                            message: "Unauthorized user",
+                            message: "Login required",
                         });
                     }
                     req.user = decode;
@@ -32,7 +32,7 @@ class Authorization {
             // return unauthorized message
             return res.status(200).json({
                 code: 400,
-                message: "Unauthorized user",
+                message: "Login required",
             });
         }
     };
@@ -108,6 +108,27 @@ class Authorization {
         });
     }
 
+    getUserInformation = async(req, res)=>{
+        const userId=req.user.id;
+        if(!userId){
+            return res.status(200).json({
+                code: 400,
+                message: "Login required",
+            });
+        }
+        const user=await users.findOne({_id: userId});
+        if(!user){
+            return res.status(400).json({
+                code: 0,
+                message: "User not exist"
+            });
+        }
+        return res.status(200).json({
+            code: 0,
+            message: "Successful.",
+            data: JSON.stringify(user)
+        });
+    }
 }
 
 module.exports= new Authorization();
