@@ -27,12 +27,12 @@ const submitLogin=document.getElementById("submit-login");
 
 submitLogin.onclick=function(e){
     console.log("CALLED");
-    const username=document.getElementById("username").value;
+    const idNumber=document.getElementById("idNumber").value;
 
     const password=document.getElementById("password").value;
     const role=document.getElementById("role").value;
     const data={
-        username: username,
+        idNumber: idNumber,
         password: password,
         role: role
     }
