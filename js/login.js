@@ -44,8 +44,8 @@ submitLogin.onclick=function(e){
             const res=JSON.parse(this.responseText);
             if(res.code==0){
                 // localStorage.put("token", res.data);
-                document.cookie="token="+res.data+"; path=/";
-                
+                localStorage.setItem("token", res.data);
+                console.log(localStorage.getItem("token"));
                 let dest = "";
 
                 let role = roleDropDown.value;
@@ -70,6 +70,7 @@ submitLogin.onclick=function(e){
     }
     // xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Content-type", "application/json");
+    // xhr.setRequestHeader("authorization", ("Bearer "+token))
     console.log(data);
     console.log(JSON.stringify(data))
     xhr.send(JSON.stringify(data)); 

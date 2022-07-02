@@ -43,7 +43,11 @@ const Users=new mongoose.Schema({
             type: ObjectId,
             ref: "PaymentHistory",
         }
-    ]
+    ],
+    gender: {
+        type: String,
+        enum: ["MALE", "FEMALE"]
+    }
 
 });
 

@@ -7,15 +7,18 @@ const bcrypt = require("bcrypt");
 class Authorization {
 
     middleware = (req, res, next) => {
+        console.log("middleware called");
+        // console.log(req);
+        // console.log(req.cookies);
         if (
-            req.cookies &&
-            req.cookies.token 
-            // req.headers.authorization.split(" ")[0] == "Bearer"
+            req.headers &&
+            req.headers.authorization && 
+            req.headers.authorization.split(" ")[0] == "Bearer"
         ) {
-            console.log(req.cookies.token);
+            // console.log(req.cookies.token);
             jwt.verify(
-                // req.headers.authorization.split(" ")[1],
-                req.cookies.token,
+                req.headers.authorization.split(" ")[1],
+                // req.cookies.token,
                 process.env.SECRET_KEY,
                 function (err, decode) {
                     if (err) {
