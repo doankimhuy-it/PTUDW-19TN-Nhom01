@@ -1,5 +1,5 @@
 let roleDropDown = document.getElementById("role");
-let loginBtn = document.getElementById("submit-login");
+/* let loginBtn = document.getElementById("submit-login");
 
 loginBtn.onclick = () => {
     let dest = "";
@@ -19,11 +19,12 @@ loginBtn.onclick = () => {
     }
 
     document.location.href = dest;
-}
+} */
 
-$("form-login").submit(function(e){
-    e.preventDefault();
-    var form = $(this);
+const submitLogin=document.getElementById("submit-login");
+
+submitLogin.onclick=function(e){
+    console.log("CALLED");
     const username=document.getElementById("username").value;
 
     const password=document.getElementById("password").value;
@@ -33,14 +34,16 @@ $("form-login").submit(function(e){
         password: password,
         role: role
     }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8080/api/authorization/login"); 
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            console.log(this.responseText); 
+        }
+    }
+    // xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Content-type", "application/json");
     console.log(data);
-    $.ajax({ 
-         url   : "localhost:8080/api/authorization/login",
-         type  : "POST",
-         data  : JSON.stringify(data), // data to be submitted
-         success: function(response){
-            alert(response); // do what you like with the response
-         }
-    });
-    return false;
- });
+    console.log(JSON.stringify(data))
+    xhr.send(JSON.stringify(data)); 
+}

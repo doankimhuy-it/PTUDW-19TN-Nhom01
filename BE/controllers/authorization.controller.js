@@ -40,6 +40,8 @@ class Authorization {
         const username=req.body.username;
         const password=req.body.password
         const role=req.body.role;
+        
+        console.log(username+" "+password+" "+role);
         if(!username || !password || !role){
             return res.status(200).json({
                 "code": 400,
