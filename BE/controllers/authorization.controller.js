@@ -76,28 +76,39 @@ class Authorization {
     }
 
     register=async (req, res)=>{
-        const username=req.body.username;
-        if(!username){
+        const idNumber=req.body.idNumber;
+        if(!idNumber){
             return res.status(200).json({
                 "code": 400,
                 "message": "Some information is missing"
             });
         }
-        const user=await users.findOne({username: username});
-        if(!user){
-            
+        const user=await users.findOne({idNumber: idNumber});
+        if(!user){  
             const password=req.body.password;
             const fullname=req.body.fullname;
             const phoneNumber=req.body.phoneNumber;
             const email=req.body.email;
             const role=req.body.role;
-            if(!username || !password || !fullname || !phoneNumber || !email || !role){
+            const medicalCenter=req.body.medicalCenter;
+            const history=req.body.history;
+            const status=req.body.status;
+
+            if(!password || !fullname || !phoneNumber || !email || !role ){
                 return res.status(200).json({
                     "code": 400,
                     "message": "Some information is missing"
                 });
             }
-            const newUser=new users({username, password, fullname, phoneNumber, email, role});
+            if(role=="user"){
+                if(!medicalCenter || !status){
+                    return res.status(200).json({
+                        "code": 400,
+                        "message": "Some information is missing"
+                    });
+                }
+            }
+            const newUser=new users({password, fullname, phoneNumber, email, role, idNumber, medicalCenter, status, history});
             await newUser.save();
             // console.log(insertResponse.rows);
             return res.status(200).json({
@@ -107,7 +118,7 @@ class Authorization {
         }
         res.status(200).json({
             "code": 400,
-            "message": "Username is already used by other user"
+            "message": "This person has already had an account"
         });
     }
 

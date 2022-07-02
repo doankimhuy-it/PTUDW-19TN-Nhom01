@@ -2,9 +2,6 @@ const mongoose=require("mongoose");
 const {ObjectId}=mongoose.Schema.Types;
 
 const Users=new mongoose.Schema({
-    username: {
-        type: String,
-    },
     fullname: {
         type: String,
     },
@@ -47,6 +44,38 @@ const Users=new mongoose.Schema({
     gender: {
         type: String,
         enum: ["MALE", "FEMALE"]
+    },
+    idNumber: {
+        type: String,
+    },
+    medicalCenter: {
+        type: String,
+    },        
+    history: [
+        {
+            time: {
+                day: {
+                    type: Number,
+                },
+                month: {
+                    type: Number,
+                },
+                year: {
+                    type: Number,
+                }
+            },
+            status: {
+                type: String, 
+                enum: ["F0", "F1", "F2", "F3"]
+            },
+            medicalCenter: {
+                type: String,
+            }
+        }
+    ],
+    status: {
+        type: String,
+        enum: ["F0", "F1", "F2", "F3"]
     }
 
 });

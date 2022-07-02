@@ -1,4 +1,4 @@
-var username="NOT-INFORMATION";
+var fullname="NOT-INFORMATION";
 var password="NOT-INFORMATION";
 var email="NOT-INFORMATION";
 var phoneNumber="NOT-INFORMATION";
@@ -37,7 +37,7 @@ function getUserInformation(){
             const res=JSON.parse(this.responseText);
             if(res.code==0){
                 const data=JSON.parse(res.data);
-                username=(data.username ? data.username : username);
+                fullname=(data.fullname ? data.fullname : fullname);
                 password=(data.password ? data.password : password);
                 email=(data.email ? data.email : email);
                 phoneNumber=(data.phoneNumber ? data.phoneNumber : phoneNumber);
@@ -60,7 +60,7 @@ function getUserInformation(){
 }
 
 function render(){
-    document.getElementById("name").innerHTML=username;
+    document.getElementById("name").innerHTML=fullname;
     document.getElementById("gender").innerHTML=gender;
     document.getElementById("pass").innerHTML=password;
     document.getElementById("email").innerHTML=email;
