@@ -48,3 +48,7 @@ body {
 #row {
     width: 30%;
 }
+
+input::placeholder {
+    overflow: visible;
+}

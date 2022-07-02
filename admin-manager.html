@@ -43,7 +43,7 @@
                     </li>
 
 
-                    <li class="nav-item d-flex justify-content-center align-items-center">
+                    <li class="nav-item d-flex justify-content-end align-items-center me-5">
                         <div class="dropdown ms-2">
                             <button class="btn btn-link dropdown-toggle" type="button" id="account-control"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,9 +77,7 @@
             <button class="btn btn-link text-center" id="unlock-btn">
                 <span><i class="fa-solid fa-unlock me-2"></i>Mở khóa</span>
             </button>
-
         </div>
-
     </div>
 
 
@@ -116,13 +114,35 @@
                     <td>Restricted</td>
                     <td>Đã Khóa</td>
                 </tr>
-
-
             </tbody>
         </table>
     </section>
 
-
+    <div id="pagination" class="d-flex position-fixed bottom-0 end-0 mb-2">
+        <span id="row-per-table-group" class="dropup me-4 d-flex align-items-center text-nowrap">
+            <label for="row-per-table" class="me-2">Số dòng/trang</label>
+    
+            <select name="row-per-table" id="row-per-table" class="form-select">
+                <option><a class="dropdown-item" href="#">5</a></option>
+                <option><a class="dropdown-item" href="#">10</a></option>
+            </select>
+        </span>
+        <span id="display-count" class="ms-3 me-5 d-flex align-items-center">
+            <span class="me-3">Hiển thị 1-2 trên 1000</span>
+            <ul class="pagination d-flex align-items-center m-0">
+                <li>
+                    <a id="go-back-table" href="#">
+                        <i class="fa-solid fa-angle-left me-2"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="go-forward-table" href="#">
+                        <i class="fa-solid fa-angle-right me-2"></i>
+                    </a>
+                </li>
+            </ul>
+        </span>
+    </div>
 
 
     <!-- Modal to add people -->

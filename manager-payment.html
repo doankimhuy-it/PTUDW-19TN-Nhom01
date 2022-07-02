@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="manager-stats.html">
                             <button type="button" class="btn btn-link w-100">THỐNG KÊ</button>
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                             <button type="button" class="btn btn-primary w-100">THANH TOÁN</button>
                         </a>
                     </li>
-                    <li class="nav-item d-flex justify-content-center align-items-center">
+                    <li class="nav-item d-flex justify-content-end align-items-center me-5">
                         <div class="dropdown ms-2">
                             <button class="btn btn-link dropdown-toggle" type="button" id="account-control"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,18 +143,18 @@
     </div>
 
     <div id="minimum-payment-setup container-fluid">
-        <form class="row g-3 align-items-end d-flex justify-content-evenly py-3">
+        <form class="row g-3 align-items-end d-flex justify-content-center py-3">
             <div class="col-6">
-                <label for="inlineFormInputGroupUsername">Thay đổi hạn mức thanh toán tối thiểu</label>
-                <div class="input-group">
-                    <input type="text" class="form-control input-sm" id="inlineFormInputGroupUsername"
+                <label for="change-minimum-payment-baseline">Thay đổi hạn mức thanh toán tối thiểu</label>
+                <div class="input-group mt-2">
+                    <input type="text" class="form-control input-sm" id="change-minimum-payment-baseline"
                         placeholder="50000">
                 </div>
             </div>
 
             <div class="col-2" id="submit-btn">
                 <button type="button" class="btn btn-primary text-center" data-bs-toggle="modal"
-                    data-bs-target="#confirm-modal">
+                    data-bs-target="#confirm-modal" style="height: 38px;">
                     <span>Xác nhận</span>
                 </button>
             </div>
@@ -277,10 +277,10 @@
         </table>
     </section>
 
-    <div id="pagination" class="d-flex justify-content-end me-5">
+    <div id="pagination" class="d-flex position-fixed bottom-0 end-0 mb-2">
         <span id="row-per-table-group" class="dropup me-4 d-flex align-items-center text-nowrap">
             <label for="row-per-table" class="me-2">Số dòng/trang</label>
-
+    
             <select name="row-per-table" id="row-per-table" class="form-select">
                 <option><a class="dropdown-item" href="#">5</a></option>
                 <option><a class="dropdown-item" href="#">10</a></option>
