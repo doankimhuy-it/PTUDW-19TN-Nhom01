@@ -5,9 +5,6 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dropOldDb": "dropdb -U postgres ptudw",
-    "setDatabasePassword": "set PGPASSWORD=123",
-    "initDatabase": "createdb -U postgres -W ptudw && psql \"postgresql://postgres:123@localhost:5432/ptudw\"",
     "start": "node server.js"
   },
   "author": "",
