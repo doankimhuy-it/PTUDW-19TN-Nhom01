@@ -92,7 +92,7 @@ class Necessary {
                 });
             }
     
-            const user2=users.findOne({_id: req.user.id});
+            const user2 = users.findOne({_id: req.user.id});
             if(!user2){
                 return res.status(400).json({
                     code: 400,
@@ -132,7 +132,7 @@ class Necessary {
             });
         }
 
-        const user2=users.findOne({_id: req.user.id});
+        const user2 = users.findOne({_id: req.user.id});
         if(!user2){
             return res.status(400).json({
                 code: 400,
@@ -152,15 +152,30 @@ class Necessary {
             const price = req.body.price
             const description = req.body.description
 
-            const check = necessaries.findOne({_id: id})
-            if (!check) {
+            const necessary = necessaries.findOne({_id: id})
+            if (!necessary) {
                 res.status(200).json({
                     "code": 400,
                     "message": "This necessary isn't in database"
                 });
             }
             else {
-                
+                if (name) {
+                    necessary.necessaryName = name
+                }
+                if (quantity) {
+                    necessary.quantity = quantity
+                }
+                if (price) {
+                    necessary.price = price
+                }
+                if (description) {
+                    necessary.description = description
+                }
+                res.status(200).json({
+                    "code": 400,
+                    "message": "Finish update nacessary info"
+                });
             }
         
     }
