@@ -2,6 +2,9 @@ const mongoose=require("mongoose");
 const {ObjectId}=mongoose.Schema.Types;
 
 const Necessary = new mongoose.Schema({
+    necessaryID: {
+        type: String,
+    },
     necessaryName: {
         type: String,
     },
