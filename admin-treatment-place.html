@@ -80,26 +80,7 @@
                     <th scope="col">Số lượng tiếp nhận hiện tại</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Trung tâm y tế quận 5</span>
-                    </td>
-                    <td>5000</td>
-                    <td>4000</td>
-                </tr>
-                <tr>
-
-                    <td>
-                        <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
-                        <span class="name">Trung tâm y tế Thành phố Thủ Đức</span>
-                    </td>
-                    <td>7000</td>
-                    <td>7000</td>
-                </tr>
-
-
+            <tbody id="table-body">
             </tbody>
         </table>
     </section>
@@ -140,34 +121,34 @@
                 </div>
 
 
-                <form id="add-people-info">
+                <form id="add-location-info">
                     <div class="modal-body">
                         <div class="container-fluid mx-2">
                             <div class="row my-3">
-                                <div class="col" id="add-people-name-group">
-                                    <label for="add-people-name" class="form-label text-nowrap">Tên</label>
+                                <div class="col" id="add-location-name-group">
+                                    <label for="add-location-name" class="form-label text-nowrap">Tên</label>
                                     <br />
-                                    <input type="text" class="form-control" name="add-people-name" id="add-people-name"
+                                    <input type="text" class="form-control" name="add-location-name" id="add-location-name"
                                         placeholder="Trung tâm y tế quận 5">
                                 </div>
 
                             </div>
                             <div class="row my-3">
-                                <div class="col" id="add-people-account-group">
-                                    <label for="add-people-account" class="form-label">Số lượng tiếp nhận tối đa</label>
+                                <div class="col" id="add-location-capacity-group">
+                                    <label for="add-location-account" class="form-label">Số lượng tiếp nhận tối đa</label>
                                     <br />
-                                    <input type="text" class="form-control" name="add-people-account"
-                                        id="add-people-account" placeholder="5000">
+                                    <input type="text" class="form-control" name="add-location-capacity"
+                                        id="add-location-capacity" placeholder="5000">
                                 </div>
                             </div>
 
                             <div class="row my-3">
-                                <div class="col" id="add-people-account-group">
-                                    <label for="add-people-account" class="form-label">Số lượng tiếp nhận hiện
+                                <div class="col" id="add-location-current-allocation-group">
+                                    <label for="add-location-current-allocation" class="form-label">Số lượng tiếp nhận hiện
                                         tại</label>
                                     <br />
-                                    <input type="text" class="form-control" name="add-people-account"
-                                        id="add-people-account" placeholder="1000">
+                                    <input type="text" class="form-control" name="add-location-current-allocation"
+                                        id="add-location-current-allocation" placeholder="1000">
                                 </div>
                             </div>
 
@@ -177,11 +158,11 @@
 
 
 
-                    <div class="modal-footer  border-0 d-flex justify-content-around">
+                    <div class="modal-footer border-0 d-flex justify-content-around">
                         <button type="button" class="btn btn-secondary col-7" data-bs-dismiss="modal">Hủy</button>
                     </div>
                     <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
-                        <button type="submit" form="add-people-info" class="btn btn-primary col-7">Thêm</button>
+                        <button type="submit" form="add-location-info" class="btn btn-primary col-7", id="submit-add-location">Thêm</button>
                     </div>
 
                 </form>
@@ -197,7 +178,7 @@
 
     <script src="https://kit.fontawesome.com/999d2cf8a8.js" crossorigin="anonymous"></script>
 
-    <script src=""></script>
+    <script src="js/admin-treatment-places.js"></script>
 </body>
 
 </html>

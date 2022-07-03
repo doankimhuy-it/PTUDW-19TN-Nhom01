@@ -102,14 +102,14 @@ addPeopleSubmit.onclick = function () {
 }
 
 document.addEventListener('readystatechange', event => {
-  // When window loaded ( external resources are loaded too: `css`,`src`, etc...) 
+  // When window loaded (external resources are loaded too: `css`,`src`, etc...) 
   if (event.target.readyState === "complete") {
     console.log("LOADED");
-    getAdminMngrInfo();
+    getLocationInfo();
   }
 });
 
-function getAdminMngrInfo() {
+function getLocationInfo() {
   tableBody = document.getElementById("table-body");
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://localhost:8080/api/authorization/getAdminMngrInfo");
@@ -121,7 +121,7 @@ function getAdminMngrInfo() {
         for (let i = 0; i < res.data.length; i++) {
           console.log(res.data[i]);
           const data = res.data[i];
-          render(data, i, tableBody);
+          render(data, tableBody);
         }
       }
       else {
@@ -134,7 +134,7 @@ function getAdminMngrInfo() {
   xhr.send();
 }
 
-const render = (data) => {
+const render = (data, tableBody) => {
   const container = document.createElement("tr");
 
   const checkboxContainer = document.createElement("td");
