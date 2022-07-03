@@ -1,5 +1,3 @@
-//const users = require("../BE/models/user");
-
 masterCheckbox = document.getElementById("master-checkbox");
 masterCheckbox.onchange = () => {
   // get checked state of the "check all" box 
@@ -11,18 +9,33 @@ masterCheckbox.onchange = () => {
   }
 };
 
+const setAccountStatus = (username, accountStatus) => {
+  console.log("CALLED");
+  const data = {
+    username: username,
+    accountStatus: accountStatus
+  }
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:8080/api/authorization/setAccountStatus");
+  xhr.onreadystatechange = function () { // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      console.log(this.responseText);
+    }
+  }
+  xhr.setRequestHeader("Content-type", "application/json");
+  console.log(data);
+  console.log(JSON.stringify(data))
+  xhr.send(JSON.stringify(data));
+}
+
 lockBtn = document.getElementById("lock-btn");
 lockBtn.onclick = function() {
   // check which rows have been selected
   $("#admin-table > tbody > tr").each(function() {
     if ($(this).find(".checkbox").is(":checked")) {
-      alert("HI");
       $(this).find(".account-status").text("Đã khóa");
       let username = $(this).find(".username").text();
-      user = users.findOne({ username: username });
-      if (user) {
-        user.accountStatus = "locked";
-      }
+      setAccountStatus(username, "locked");
     }
   });
 }
@@ -34,11 +47,7 @@ unlockBtn.onclick = () => {
     if ($(this).find(".checkbox").is(":checked")) {
       $(this).find(".account-status").text("Đang mở");
       let username = $(this).find(".username").text();
-      alert(username);
-      user = users.findOne({ username: username });
-      if (user) {
-        user.accountStatus = "open";
-      }
+      setAccountStatus(username, "open");
     }
   });
 }

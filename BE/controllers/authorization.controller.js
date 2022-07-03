@@ -75,68 +75,68 @@ class Authorization {
         });
     }
 
-    register=async (req, res)=>{
+    register = async (req, res) => {
         try {
             console.log(req.user);
-            if(!req.user){
+            if (!req.user) {
                 return res.status(200).json({
                     code: 400,
                     message: "Login required",
                 });
             }
-            const userId=req.user.id;
-            if(!userId){
+            const userId = req.user.id;
+            if (!userId) {
                 return res.status(200).json({
                     code: 400,
                     message: "Login required",
                 });
             }
-            const user2=await users.findOne({_id: userId});
-            if(!user2){
+            const user2 = await users.findOne({ _id: userId });
+            if (!user2) {
                 return res.status(400).json({
                     code: 400,
                     message: "User not exist"
                 });
             }
-            if(user2.role!=="manager"){
+            if (user2.role !== "manager") {
                 return res.status(400).json({
                     code: 400,
                     message: "You dont have permission. Only manager can add patient"
                 });
             }
-            const idNumber=req.body.idNumber;
-            if(!idNumber){
+            const idNumber = req.body.idNumber;
+            if (!idNumber) {
                 return res.status(200).json({
                     "code": 400,
                     "message": "Some information is missing"
                 });
             }
-            const user=await users.findOne({idNumber: idNumber});
-            if(!user){  
-                const password=req.body.password;
-                const fullname=req.body.fullname;
-                const phoneNumber=req.body.phoneNumber;
-                const email=req.body.email;
-                const role=req.body.role;
-                const medicalCenter=req.body.medicalCenter;
-                const history=req.body.history;
-                const status=req.body.status;
-                const dayOfBirth=req.body.dayOfBirth;
-    
-                console.log(password+" "+fullname+" "+role);
-                if(!password || !fullname || !role || !medicalCenter || !status){
+            const user = await users.findOne({ idNumber: idNumber });
+            if (!user) {
+                const password = req.body.password;
+                const fullname = req.body.fullname;
+                const phoneNumber = req.body.phoneNumber;
+                const email = req.body.email;
+                const role = req.body.role;
+                const medicalCenter = req.body.medicalCenter;
+                const history = req.body.history;
+                const status = req.body.status;
+                const dayOfBirth = req.body.dayOfBirth;
+
+                console.log(password + " " + fullname + " " + role);
+                if (!password || !fullname || !role || !medicalCenter || !status) {
                     return res.status(200).json({
                         "code": 400,
                         "message": "Some information is missing"
                     });
                 }
-                if(role!="user"){
+                if (role != "user") {
                     return res.status(200).json({
                         "code": 400,
                         "message": "Currently we only allow to register patient"
                     });
                 }
-                const newUser=new users({password, fullname, phoneNumber, email, role, idNumber, medicalCenter, status, history, dayOfBirth});
+                const newUser = new users({ password, fullname, phoneNumber, email, role, idNumber, medicalCenter, status, history, dayOfBirth });
                 await newUser.save();
                 // console.log(insertResponse.rows);
                 return res.status(200).json({
@@ -179,29 +179,29 @@ class Authorization {
         });
     }
 
-    getAllPatientsInformation=async(req, res)=>{
-        const userId=req.user.id;
-        if(!userId){
+    getAllPatientsInformation = async (req, res) => {
+        const userId = req.user.id;
+        if (!userId) {
             return res.status(200).json({
                 code: 400,
                 message: "Login required",
             });
         }
-        const user2=await users.findOne({_id: userId});
-        if(!user2){
+        const user2 = await users.findOne({ _id: userId });
+        if (!user2) {
             return res.status(400).json({
                 code: 400,
                 message: "User not exist"
             });
         }
-        if(user2.role!=="manager"){
+        if (user2.role !== "manager") {
             return res.status(400).json({
                 code: 400,
                 message: "You dont have permission. Only manager can see all patients"
             });
         }
 
-        const res2=await users.find({role: "user"});
+        const res2 = await users.find({ role: "user" });
         console.log(res2);
         return res.status(200).json({
             code: 0,
@@ -245,6 +245,36 @@ class Authorization {
         res.status(200).json({
             "code": 400,
             "message": "This person has already had an account"
+        });
+    }
+
+    setAccountStatus = async (req, res) => {
+        console.log("set account status called");
+        const username = req.body.username;
+        if (!username) {
+            return res.status(200).json({
+                "code": 400,
+                "message": "Username is missing"
+            });
+        }
+        const accountStatus = req.body.accountStatus;
+        if (!accountStatus) {
+            return res.status(200).json({
+                "code": 400,
+                "message": "Account status is missing"
+            });
+        }
+        await users.updateOne({ username: username }, { $set: { accountStatus: accountStatus } }, function (err, _doc) {
+            if (err) {
+                return res.status(200).json({
+                    "code": 400,
+                    "message": err.toString()
+                });
+            }
+        });
+        return res.status(200).json({
+            "code": 0,
+            "message": "Successful."
         });
     }
 }
