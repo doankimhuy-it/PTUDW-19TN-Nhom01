@@ -148,8 +148,8 @@
                     <th scope="col">Nơi đang điều trị</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id="people-field">
+                <!-- <tr>
                     <th scope="row">1</th>
                     <td>
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-2">
@@ -248,7 +248,7 @@
                     <td>2000</td>
                     <td>F0</td>
                     <td>TTYT Quận 1</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </section>
@@ -329,7 +329,7 @@
                                     <label for="add-people-adress" class="form-label">Địa chỉ</label>
                                     <br />
                                     <input type="text" class="form-control" name="add-people-adress"
-                                        id="add-people-adress"
+                                        id="add-people-address"
                                         placeholder="227 Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh">
                                 </div>
                             </div>
@@ -389,27 +389,28 @@
                             <div class="row my-3" id="add-treatment-history-group">
                                 <p>Lịch sử điều trị</p>
                                 <div>
-                                    <ul class="list-group">
+                                    <div id="treatmentHistories"></div>
+                                    <ul class="list-group" id="treatmentHistory">
                                         <li>
                                             <div id="add-treatment-history-3" class="d-flex mb-2">
-                                                <div class="col me-4" id="add-treatment-history-date">
-                                                    <input type="date" class="form-control"
+                                                <div class="col me-4" id="add-treatment-history-date-2">
+                                                    <input type="date" class="form-control "
                                                         name="add-treatment-history-date"
                                                         id="add-treatment-history-date">
                                                 </div>
-                                                <div class="col me-4" id="add-treatment-history-status">
+                                                <div class="col me-4" id="add-treatment-history-status-2">
                                                     <select name="add-treatment-history-status"
                                                         id="add-treatment-history-status" class="form-select">
-                                                        <option value="f0" selected>F0</option>
+                                                        <option value="f0" selected="selected">F0</option>
                                                         <option value="f1">F1</option>
                                                         <option value="f2">F2</option>
                                                         <option value="f3">F3</option>
                                                     </select>
                                                 </div>
-                                                <div class="col" id="add-treatment-history-place">
+                                                <div class="col" id="add-treatment-history-place-2">
                                                     <select name="add-treatment-history-place"
                                                         id="add-treatment-history-place" class="form-select">
-                                                        <option value="q1" selected>TTYT quận 1</option>
+                                                        <option value="q1" selected="selected">TTYT quận 1</option>
                                                         <option value="q2">TTYT quận 2</option>
                                                         <option value="q3">TTYT quận 3</option>
                                                         <option value="q4">TTYT quận 4</option>
@@ -437,7 +438,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center mt-2">
                                     <button id="add-treatment-history-btn" type="button" class="btn btn-link"
-                                        data-bs-toggle="modal" data-bs-target="#add-people-modal">
+                                         data-bs-target="#add-people-modal">
                                         <span><i class="fa-solid fa-circle-plus me-2 mt-0"></i>Thêm lịch sử</span>
                                     </button>
                                 </div>
@@ -446,7 +447,7 @@
                     </div>
                     <div class="modal-footer mb-4 border-0 d-flex justify-content-around">
                         <button type="button" class="btn btn-secondary col-3" data-bs-dismiss="modal">Hủy</button>
-                        <button type="submit" form="add-people-info" class="btn btn-primary col-3">Xác nhận</button>
+                        <button type="button" id="submit-add-people" form="add-people-info" class="btn btn-primary col-3">Xác nhận</button>
                     </div>
                 </form>
             </div>
