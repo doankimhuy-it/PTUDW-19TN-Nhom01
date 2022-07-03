@@ -1,6 +1,7 @@
 require("dotenv").config();
 var mongoose = require("mongoose");
 const necessaries = require("../models/necessary");
+const users=require("../models/user");
 
 class Necessary {
     getNecessaryByID = async(req, res) => {
@@ -31,59 +32,125 @@ class Necessary {
     }
 
     addNecessary = async(req, res) => {
-        const userRole = req.user.role;
-        if (userRole == "User") {
-            return res.status(400).json({
-                code: 400,
-                message: "You dont have permission. Only manager and admin can add necessary"
-            });
-        } else {
-            const id = req.body.necessaryID
-            const name = req.body.necessaryName
-            const quantity = req.body.quantity
-            const price = req.body.price
-            const description = req.body.description
-            const img = req.body.image
-
-            if (!id || !name || !quantity || !price) {
-                return res.status(200).json({
-                    "code": 400,
-                    "message": "Some information is missing"
-                });
-            } else {
-                const check = necessaries.findOne({_id: id})
-                if (check) {
-                    res.status(200).json({
-                        "code": 400,
-                        "message": "Already have this necessary in database"
-                    });
-                }
-
-                const newNecessary = new Necessary({id, name, quantity, price, description, img})
-                await newNecessary.save()
-                return res.status(200).json({
-                    "code": 0,
-                    "message": "Successful."
+        try {
+            if(!(req.user && req.user.id) ){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
                 });
             }
+    
+            const user2=users.findOne({_id: req.user.id});
+            if(!user2){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
+                });
+            }
+    
+            if (user2.role == "user") {
+                return res.status(400).json({
+                    code: 400,
+                    message: "You dont have permission. Only manager and admin can update necessary"
+                });
+            } else {
+                const necessaryName = req.body.necessaryName
+                const quantity = req.body.quantity
+                const price = req.body.price
+                const description = req.body.description
+                const unit=req.body.unit;
+                if (!necessaryName || !quantity || !price) {
+                    return res.status(200).json({
+                        "code": 400,
+                        "message": "Some information is missing"
+                    });
+                } else {
+    
+                    const newNecessary = new necessaries({necessaryName, quantity, price, description, unit})
+                    await newNecessary.save();
+                    return res.status(200).json({
+                        "code": 0,
+                        "message": "Successful."
+                    });
+                }
+            }
+        } catch (error) {
+            console.log(error);
+            return res.status(200).json({
+                code: 400,
+                message: error
+            });
+        }   
+    }
+
+    getAllNecessaries=async(req, res)=>{
+        try {
+            if(!(req.user && req.user.id) ){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
+                });
+            }
+    
+            const user2=users.findOne({_id: req.user.id});
+            if(!user2){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
+                });
+            }
+    
+            if (user2.role == "user") {
+                return res.status(400).json({
+                    code: 400,
+                    message: "You dont have permission. Only manager and admin can see all necessaries"
+                });
+            }
+    
+            const res2=await necessaries.find();
+    
+            return res.status(200).json({
+                code: 0,
+                message: "Successful.",
+                data: res2
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(200).json({
+                code: 400,
+                message: error
+            });
         }
     }
 
     updateNecessary = async(req, res) => {
-        const userRole = req.user.role;
-        if (userRole == "User") {
+
+        if(!(req.user && req.user.id) ){
             return res.status(400).json({
                 code: 400,
-                message: "You dont have permission. Only manager and admin can add necessary"
+                message: "Login required"
             });
         }
-        else {
-            const id = req.body.necessaryID
+
+        const user2=users.findOne({_id: req.user.id});
+        if(!user2){
+            return res.status(400).json({
+                code: 400,
+                message: "Login required"
+            });
+        }
+
+        if (user2.role == "user") {
+            return res.status(400).json({
+                code: 400,
+                message: "You dont have permission. Only manager and admin can update necessary"
+            });
+        }
+
             const name = req.body.necessaryName
             const quantity = req.body.quantity
             const price = req.body.price
             const description = req.body.description
-            const img = req.body.image
 
             const check = necessaries.findOne({_id: id})
             if (!check) {
@@ -95,7 +162,7 @@ class Necessary {
             else {
                 
             }
-        }
+        
     }
 }
 

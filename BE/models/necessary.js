@@ -2,9 +2,6 @@ const mongoose=require("mongoose");
 const {ObjectId}=mongoose.Schema.Types;
 
 const Necessary = new mongoose.Schema({
-    necessaryID: {
-        type: String,
-    },
     necessaryName: {
         type: String,
     },
@@ -14,10 +11,10 @@ const Necessary = new mongoose.Schema({
     price: {
         type: Number,
     },
-    image: {
-        type: ImageBitmap,
-    },
     description: {
+        type: String,
+    },
+    unit: {
         type: String,
     }
 });
