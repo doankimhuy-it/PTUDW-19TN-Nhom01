@@ -94,7 +94,7 @@
                     <th scope="col">Trạng thái tài khoản</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="table-body">
                 <tr>
                     <td><input type="checkbox" class="checkbox"></td>
                     <td class="d-flex align-items-center">
@@ -159,29 +159,28 @@
                     <div class="modal-body">
                         <div class="container-fluid mx-2">
                             <div class="row my-3">
-                                <div class="col" id="add-people-name-group">
-                                    <label for="add-people-name" class="form-label text-nowrap">Họ và tên</label>
+                                <div class="col" id="add-people-fullname-group">
+                                    <label for="add-people-fullname" class="form-label text-nowrap">Họ và tên</label>
                                     <br />
-                                    <input type="text" class="form-control" name="add-people-name" id="add-people-name"
-                                        placeholder="Nguyễn Văn A">
+                                    <input type="text" class="form-control" name="add-people-fullname"
+                                        id="add-people-fullname" placeholder="Nguyễn Văn A">
                                 </div>
 
                             </div>
                             <div class="row my-3">
-                                <div class="col" id="add-people-account-group">
-                                    <label for="add-people-account" class="form-label">Tên đăng nhập</label>
+                                <div class="col" id="add-people-username-group">
+                                    <label for="add-people-username" class="form-label">Tên đăng nhập</label>
                                     <br />
-                                    <input type="text" class="form-control" name="add-people-account"
-                                        id="add-people-account" placeholder="qtv3dethuong">
+                                    <input type="text" class="form-control" name="add-people-username"
+                                        id="add-people-username" placeholder="qtv3dethuong">
                                 </div>
                             </div>
                             <div class="row my-3">
 
-                                <div class="col" id="add-people-treatment-place-group">
-                                    <label for="add-people-treatment-place" class="form-label">Quyền hạn</label>
+                                <div class="col" id="add-people-role-group">
+                                    <label for="add-people-role" class="form-label">Quyền hạn</label>
                                     <br />
-                                    <select name="add-people-treatment-place" id="add-people-treatment-place"
-                                        class="form-select ">
+                                    <select name="add-people-role" id="add-people-role" class="form-select">
                                         <option value="Full" selected>Admin</option>
                                         <option value="Restricted">Quản lý</option>
 
@@ -199,18 +198,27 @@
 
                             <div class="row my-3">
                                 <div class="col" id="add-people-repassword-group">
-                                    <label for="add-people-repassword" class="form-label">Nhập Lại Mật khẩu</label>
+                                    <label for="add-people-repassword" class="form-label">Nhập lại mật khẩu</label>
                                     <br />
-                                    <input type="repassword" class="form-control" name="add-people-repassword"
+                                    <input type="password" class="form-control" name="add-people-repassword"
                                         id="add-people-repassword" placeholder="**********">
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col" id="add-people-id-number-group">
+                                    <label for="add-people-id-number" class="form-label">CMND/CCCD</label>
+                                    <br />
+                                    <input type="text" class="form-control" name="add-people-id-number"
+                                        id="add-people-id-number" placeholder="012345678912">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="modal-footer  border-0 d-flex justify-content-around">
+                    <div class="modal-footer border-0 d-flex justify-content-around">
                         <button type="button" class="btn btn-secondary col-5" data-bs-dismiss="modal">Hủy</button>
-                        <button type="submit" form="add-people-info" class="btn btn-primary col-5">Thêm</button>
+                        <button type="submit" form="add-people-info" class="btn btn-primary col-5" id="submit-add-people" data-bs-dismiss="modal">Thêm</button>
                     </div>
                 </form>
             </div>

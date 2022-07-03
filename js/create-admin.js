@@ -14,7 +14,8 @@ createAdminBtn.onclick = (e) => {
         password: password,
         fullname: fullname,
         phoneNumber: phoneNumber,
-        email: email
+        email: email,
+        accountStatus: "open"
     }
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:8080/api/authorization/createAdmin");

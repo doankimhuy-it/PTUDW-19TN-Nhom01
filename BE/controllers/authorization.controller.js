@@ -250,6 +250,13 @@ class Authorization {
 
     setAccountStatus = async (req, res) => {
         console.log("set account status called");
+        const userId = req.user.id;
+        if (!userId) {
+            return res.status(200).json({
+                code: 400,
+                message: "Login required",
+            });
+        }
         const username = req.body.username;
         if (!username) {
             return res.status(200).json({
@@ -276,6 +283,81 @@ class Authorization {
             "code": 0,
             "message": "Successful."
         });
+    }
+
+    createAdminOrMngr = async (req, res) => {
+        try {
+            console.log(req.user);
+            if (!req.user) {
+                return res.status(200).json({
+                    code: 400,
+                    message: "Login required",
+                });
+            }
+            const userId = req.user.id;
+            if (!userId) {
+                return res.status(200).json({
+                    code: 400,
+                    message: "Login required",
+                });
+            }
+            const user2 = await users.findOne({ _id: userId });
+            if (!user2) {
+                return res.status(400).json({
+                    code: 400,
+                    message: "User not exist"
+                });
+            }
+            if (user2.role !== "admin") {
+                return res.status(400).json({
+                    code: 400,
+                    message: "You dont have permission. Only admins can add other admins or managers"
+                });
+            }
+            const idNumber = req.body.idNumber;
+            if (!idNumber) {
+                return res.status(200).json({
+                    "code": 400,
+                    "message": "Some information is missing"
+                });
+            }
+            const user = await users.findOne({ idNumber: idNumber });
+            if (!user) {
+                const password = req.body.password;
+                const fullname = req.body.fullname;
+                const username = req.body.username;
+                const role = req.body.role;
+
+                if (!password || !fullname || !role) {
+                    return res.status(200).json({
+                        "code": 400,
+                        "message": "Some information is missing"
+                    });
+                }
+                if (role == "user") {
+                    return res.status(200).json({
+                        "code": 400,
+                        "message": "Admins do not manage regular users"
+                    });
+                }
+                const newUser = new users({ password, fullname, username, role, idNumber });
+                await newUser.save();
+                return res.status(200).json({
+                    "code": 0,
+                    "message": "Successful."
+                });
+            }
+            res.status(200).json({
+                "code": 400,
+                "message": "This person has already had an account"
+            });
+        } catch (error) {
+            console.log(error);
+            res.status(200).json({
+                "code": 400,
+                "message": error.toString()
+            });
+        }
     }
 }
 
