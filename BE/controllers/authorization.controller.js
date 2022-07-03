@@ -12,7 +12,7 @@ class Authorization {
         // console.log(req.cookies);
         if (
             req.headers &&
-            req.headers.authorization && 
+            req.headers.authorization &&
             req.headers.authorization.split(" ")[0] == "Bearer"
         ) {
             // console.log(req.cookies.token);
@@ -40,25 +40,25 @@ class Authorization {
         }
     };
 
-    login=async(req, res)=>{
+    login = async (req, res) => {
         console.log("login called");
-        const idNumber=req.body.idNumber;
-        const password=req.body.password
-        const role=req.body.role;
+        const idNumber = req.body.idNumber;
+        const password = req.body.password
+        const role = req.body.role;
 
-        console.log(idNumber+" "+password+" "+role);
-        if(!idNumber || !password || !role){
+        console.log(idNumber + " " + password + " " + role);
+        if (!idNumber || !password || !role) {
             return res.status(200).json({
                 "code": 400,
                 "message": "Some information is missing"
             });
         }
-        const user=await users.findOne({
+        const user = await users.findOne({
             idNumber: idNumber,
             password: password,
             role: role,
         });
-        if(!user){
+        if (!user) {
             return res.status(200).json({
                 "code": 400,
                 "message": "Id number or password incorrect"
@@ -157,16 +157,16 @@ class Authorization {
         }
     }
 
-    getUserInformation = async(req, res)=>{
-        const userId=req.user.id;
-        if(!userId){
+    getUserInformation = async (req, res) => {
+        const userId = req.user.id;
+        if (!userId) {
             return res.status(200).json({
                 code: 400,
                 message: "Login required",
             });
         }
-        const user=await users.findOne({_id: userId});
-        if(!user){
+        const user = await users.findOne({ _id: userId });
+        if (!user) {
             return res.status(400).json({
                 code: 0,
                 message: "User not exist"
@@ -211,6 +211,42 @@ class Authorization {
 
     }
 
+    createAdmin = async (req, res) => {
+        console.log("create admin called");
+        const username = req.body.username;
+        const idNumber = req.body.idNumber;
+        if (!username || !idNumber) {
+            return res.status(200).json({
+                "code": 400,
+                "message": "Some information is missing"
+            });
+        }
+        const user = await users.findOne({ idNumber: idNumber });
+        if (!user) {
+            const password = req.body.password;
+            const fullname = req.body.fullname;
+            const phoneNumber = req.body.phoneNumber;
+            const email = req.body.email;
+            const role = "admin";
+
+            if (!username || !password || !fullname || !phoneNumber || !email) {
+                return res.status(200).json({
+                    "code": 400,
+                    "message": "Some information is missing"
+                });
+            }
+            const newUser = new users({ password, fullname, phoneNumber, email, role, idNumber });
+            await newUser.save();
+            return res.status(200).json({
+                "code": 0,
+                "message": "Successful."
+            });
+        }
+        res.status(200).json({
+            "code": 400,
+            "message": "This person has already had an account"
+        });
+    }
 }
 
-module.exports= new Authorization();
+module.exports = new Authorization();
