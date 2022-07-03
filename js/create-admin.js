@@ -24,7 +24,9 @@ createAdminBtn.onclick = (e) => {
             const res = JSON.parse(this.responseText);
             if (res.code == 0) {
                 localStorage.setItem("token", res.data);
+                localStorage.setItem("pageLoadTime", "loaded");
                 console.log(localStorage.getItem("token"));
+                document.location.href = "login.html"
             }
             else {
                 document.getElementById("error-notification").innerHTML = res.message;
