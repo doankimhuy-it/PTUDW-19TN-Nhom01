@@ -169,7 +169,7 @@ class Authorization {
         if (!user) {
             return res.status(400).json({
                 code: 0,
-                message: "User not exist"
+                message: "User does not exist"
             });
         }
         return res.status(200).json({
@@ -191,7 +191,7 @@ class Authorization {
         if (!user2) {
             return res.status(400).json({
                 code: 400,
-                message: "User not exist"
+                message: "User does not exist"
             });
         }
         if (user2.role !== "manager") {
@@ -305,7 +305,7 @@ class Authorization {
             if (!user2) {
                 return res.status(400).json({
                     code: 400,
-                    message: "User not exist"
+                    message: "User does not exist"
                 });
             }
             if (user2.role !== "admin") {
@@ -358,6 +358,37 @@ class Authorization {
                 "message": error.toString()
             });
         }
+    }
+
+    getAdminMngrInfo = async (req, res) => {
+        const userId = req.user.id;
+        if (!userId) {
+            return res.status(200).json({
+                code: 400,
+                message: "Login required",
+            });
+        }
+        const user2 = await users.findOne({ _id: userId });
+        if (!user2) {
+            return res.status(400).json({
+                code: 400,
+                message: "User does not exist"
+            });
+        }
+        if (user2.role !== "admin") {
+            return res.status(400).json({
+                code: 400,
+                message: "You dont have permission. Only admin can see all admins and patients"
+            });
+        }
+
+        const res2 = await users.find({ role: ["admin", "manager"] });
+        console.log(res2);
+        return res.status(200).json({
+            code: 0,
+            message: "Successful.",
+            data: res2
+        });
     }
 }
 

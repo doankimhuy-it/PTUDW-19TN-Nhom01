@@ -53,9 +53,7 @@ unlockBtn.onclick = (e) => {
 
 const addPeopleSubmit = document.getElementById("submit-add-people");
 
-addPeopleSubmit.onclick = function (e) {
-  e.preventDefault();
-
+addPeopleSubmit.onclick = function () {
   const idNumber = document.getElementById("add-people-id-number").value;
   const fullname = document.getElementById("add-people-fullname").value;
   const username = document.getElementById("add-people-username").value;
@@ -87,12 +85,11 @@ addPeopleSubmit.onclick = function (e) {
     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
       const res = JSON.parse(this.responseText);
       if (res.code == 0) {
-        render(data);
+        location.reload();
       }
       else {
         alert(res.message);
       }
-
     }
   }
 
@@ -104,7 +101,38 @@ addPeopleSubmit.onclick = function (e) {
   xhr.send(JSON.stringify(data));
 }
 
-tableBody = document.getElementById("table-body");
+document.addEventListener('readystatechange', event => {
+  // When window loaded ( external resources are loaded too: `css`,`src`, etc...) 
+  if (event.target.readyState === "complete") {
+    console.log("LOADED");
+    getAdminMngrInfo();
+  }
+});
+
+function getAdminMngrInfo() {
+  tableBody = document.getElementById("table-body");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://localhost:8080/api/authorization/getAdminMngrInfo");
+  xhr.onreadystatechange = function () { // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      console.log(this.responseText);
+      const res = JSON.parse(this.responseText);
+      if (res.code == 0) {
+        for (let i = 0; i < res.data.length; i++) {
+          console.log(res.data[i]);
+          const data = res.data[i];
+          render(data, i, tableBody);
+        }
+      }
+      else {
+        alert(res.message);
+      }
+    }
+  }
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.setRequestHeader("authorization", "Bearer " + localStorage.getItem("token"));
+  xhr.send();
+}
 
 const render = (data) => {
   const container = document.createElement("tr");

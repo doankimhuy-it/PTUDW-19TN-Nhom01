@@ -8,5 +8,6 @@ router.get("/userInformation", authorizationController.middleware, authorization
 router.get("/patientsInformation", authorizationController.middleware, authorizationController.getAllPatientsInformation);
 router.post("/setAccountStatus", authorizationController.middleware, authorizationController.setAccountStatus);
 router.post("/createAdminOrMngr", authorizationController.middleware, authorizationController.createAdminOrMngr);
+router.get("/getAdminMngrInfo", authorizationController.middleware, authorizationController.getAdminMngrInfo);
 
 module.exports = router;
