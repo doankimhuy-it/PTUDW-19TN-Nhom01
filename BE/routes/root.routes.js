@@ -1,7 +1,7 @@
-const authorizationRoutes=require("./authorization.routes");
+const authorizationRoutes = require("./authorization.routes");
 
-function route(app){
+function route(app) {
     app.use("/api/authorization", authorizationRoutes);
 }
 
-module.exports=route;
+module.exports = route;

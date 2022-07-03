@@ -1,7 +1,7 @@
-const mongoose=require("mongoose");
-const {ObjectId}=mongoose.Schema.Types;
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema.Types;
 
-const Users=new mongoose.Schema({
+const Users = new mongoose.Schema({
     fullname: {
         type: String,
     },
@@ -27,7 +27,7 @@ const Users=new mongoose.Schema({
         },
         month: {
             type: Number,
-        }, 
+        },
         year: {
             type: Number,
         }
@@ -50,7 +50,7 @@ const Users=new mongoose.Schema({
     },
     medicalCenter: {
         type: String,
-    },        
+    },
     history: [
         {
             time: {
@@ -65,7 +65,7 @@ const Users=new mongoose.Schema({
                 }
             },
             status: {
-                type: String, 
+                type: String,
                 enum: ["F0", "F1", "F2", "F3"]
             },
             medicalCenter: {
