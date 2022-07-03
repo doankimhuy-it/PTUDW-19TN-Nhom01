@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/admin.css">
@@ -83,36 +84,36 @@
 
 
     <section id="info-table" class="container-fluid mt-4">
-        <table class="table table-hover table-borderless align-middle">
+        <table class="table table-hover table-borderless align-middle" id="admin-table">
             <thead>
                 <tr>
-                    <th scope="col"><input type="checkbox"></th>
+                    <th scope="col"><input type="checkbox" id="master-checkbox"></th>
                     <th scope="col">Tên</th>
                     <th scope="col">Username</th>
                     <th scope="col">Quyền hạn</th>
-                    <th scope="col">Trạng thái tài khoản </th>
+                    <th scope="col">Trạng thái tài khoản</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" class="checkbox"></td>
                     <td class="d-flex align-items-center">
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-3">
                         <span class="name">QTV1</span>
                     </td>
-                    <td>qtv1cute</td>
-                    <td>Full</td>
-                    <td>Đang mở</td>
+                    <td class="username">qtv1cute</td>
+                    <td class="role">Admin</td>
+                    <td class="account-status">Đang mở</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" class="checkbox"></td>
                     <td class="d-flex align-items-center">
                         <img src="img/avatar.png" alt="Avatar" width="30" height="30" class="rounded-pill me-3">
                         <span class="name">QTV2</span>
                     </td>
-                    <td>qtv2ngungok</td>
-                    <td>Restricted</td>
-                    <td>Đã Khóa</td>
+                    <td class="username">qtv2ngungok</td>
+                    <td class="role">Quản lý</td>
+                    <td class="account-status">Đã khóa</td>
                 </tr>
             </tbody>
         </table>
@@ -121,7 +122,7 @@
     <div id="pagination" class="d-flex position-fixed bottom-0 end-0 mb-2">
         <span id="row-per-table-group" class="dropup me-4 d-flex align-items-center text-nowrap">
             <label for="row-per-table" class="me-2">Số dòng/trang</label>
-    
+
             <select name="row-per-table" id="row-per-table" class="form-select">
                 <option><a class="dropdown-item" href="#">5</a></option>
                 <option><a class="dropdown-item" href="#">10</a></option>
@@ -224,7 +225,7 @@
 
     <script src="https://kit.fontawesome.com/999d2cf8a8.js" crossorigin="anonymous"></script>
 
-    <script src=""></script>
+    <script src="js/admin-manager.js"></script>
 </body>
 
 </html>

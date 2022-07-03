@@ -76,8 +76,11 @@ const Users = new mongoose.Schema({
     status: {
         type: String,
         enum: ["F0", "F1", "F2", "F3"]
+    },
+    accountStatus: {
+        type: String,
+        enum: ["open", "locked"]
     }
-
 });
 
 module.exports = mongoose.model('Users', Users);
