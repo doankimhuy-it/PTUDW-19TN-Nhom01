@@ -123,61 +123,80 @@ class Necessary {
         }
     }
 
+    
+
     updateNecessary = async(req, res) => {
 
-        if(!(req.user && req.user.id) ){
-            return res.status(400).json({
-                code: 400,
-                message: "Login required"
-            });
-        }
-
-        const user2 = users.findOne({_id: req.user.id});
-        if(!user2){
-            return res.status(400).json({
-                code: 400,
-                message: "Login required"
-            });
-        }
-
-        if (user2.role == "user") {
-            return res.status(400).json({
-                code: 400,
-                message: "You dont have permission. Only manager and admin can update necessary"
-            });
-        }
-
-            const name = req.body.necessaryName
-            const quantity = req.body.quantity
-            const price = req.body.price
-            const description = req.body.description
-
-            const necessary = necessaries.findOne({_id: id})
-            if (!necessary) {
-                res.status(200).json({
-                    "code": 400,
-                    "message": "This necessary isn't in database"
+        try {
+            if(!(req.user && req.user.id) ){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
                 });
             }
-            else {
-                if (name) {
-                    necessary.necessaryName = name
-                }
-                if (quantity) {
-                    necessary.quantity = quantity
-                }
-                if (price) {
-                    necessary.price = price
-                }
-                if (description) {
-                    necessary.description = description
-                }
-                res.status(200).json({
-                    "code": 400,
-                    "message": "Finish update nacessary info"
+    
+            const user2 = users.findOne({_id: req.user.id});
+            if(!user2){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
                 });
             }
-        
+    
+            if (user2.role == "user") {
+                return res.status(400).json({
+                    code: 400,
+                    message: "You dont have permission. Only manager and admin can update necessary"
+                });
+            }
+                const id=req.body.id;
+                const name = req.body.necessaryName
+                const quantity = req.body.quantity
+                const price = req.body.price
+                const description = req.body.description
+    
+                if(!name || !quantity || !price){
+                    res.status(200).json({
+                        "code": 400,
+                        "message": "Some information is missing"
+                    });
+                }
+    
+                const originalNecessary = await necessaries.findOne({_id: id})
+                console.log(originalNecessary);
+                if (!originalNecessary) {
+                    return res.status(200).json({
+                        "code": 400,
+                        "message": "This necessary isn't in database"
+                    });
+                }
+                else {
+                    if (name) {
+                        originalNecessary.necessaryName = name
+                    }
+                    if (quantity) {
+                        originalNecessary.quantity = quantity
+                    }
+                    if (price) {
+                        originalNecessary.price = price
+                    }
+                    if (description) {
+                        originalNecessary.description = description
+                    }
+                    await originalNecessary.save();
+                    res.status(200).json({
+                        "code": 0,
+                        "message": "Finish update nacessary info"
+                    });
+                }
+            
+        } catch (error) {
+            console.log(error);
+            res.status(200).json({
+                "code": 400,
+                "message": error
+            });
+        }
     }
 }
 

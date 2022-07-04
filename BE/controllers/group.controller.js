@@ -127,6 +127,71 @@ class GroupOfNecessaries {
         }
     }
 
+    updateGroup=async(req, res)=>{
+       try {
+            if(!(req.user && req.user.id) ){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
+                });
+            }
+    
+            const user2 = users.findOne({_id: req.user.id});
+            if(!user2){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Login required"
+                });
+            }
+    
+            if (user2.role == "user") {
+                return res.status(400).json({
+                    code: 400,
+                    message: "You dont have permission. Only manager and admin can update group"
+                });
+            }
+    
+            const groupId=req.body.groupId;
+            const groupName = req.body.groupName
+            const groupQuantity = req.body.groupQuantity
+            const price = req.body.price
+            const necessariesList=req.body.necessariesList;
+            if (!groupId || !groupName || !groupQuantity || !price || !necessariesList || necessariesList.length==0) {
+                return res.status(200).json({
+                    "code": 400,
+                    "message": "Some information is missing"
+                });
+            }
+    
+            const group=await groupOfNecessaries.findOne({_id: groupId});
+            console.log(group);
+            if(!group){
+                return res.status(200).json({
+                    "code": 400,
+                    "message": "Fail."
+                });
+            }
+            console.log(groupQuantity);
+            group.groupName=groupName;
+            group.groupQuantity=groupQuantity;
+            group.price=price;
+            group.necessariesList=necessariesList;
+            await group.save();
+    
+            return res.status(200).json({
+                "code": 0,
+                "message": "Successful."
+            });
+       } catch (error) {
+            return res.status(200).json({
+                "code": 400,
+                "message": error
+            });
+       }
+
+
+    }
+
     // updateNecessary = async(req, res) => {
 
     //     if(!(req.user && req.user.id) ){

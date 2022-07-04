@@ -176,6 +176,7 @@ function renderProduct(data, row){
     const dummyBtn=document.getElementById("dummy-btn-product");
     console.log(dummyBtn);
     btn.onclick=function(){
+        document.getElementById("id-fix-product").innerHTML=data._id;
         document.getElementById("fix-product-name").innerHTML=data.necessaryName;
         document.getElementById("product-price-fix").value=data.price;
         document.getElementById("numberProduct").placeholder=data.quantity;
@@ -339,7 +340,7 @@ function renderFixGroupNecessaries(item){
     const text=document.createElement("input");
     text.type="text";
     text.id=item.necessaryId._id;
-    text.placeholder="2";
+    text.placeholder=item.quantity;
     text.size="2";
     text.className="form-control quantity";
 
@@ -386,6 +387,8 @@ function decrease(id) {
     text.placeholder = parseInt(text.placeholder) - 1
 }
 
+var itemQuantityInGroup=[];
+
 function getGroupInformation2(id){
     const data={    
         groupId: id
@@ -400,13 +403,27 @@ function getGroupInformation2(id){
                // location.reload();
                const groupName=res.data.groupName ? res.data.groupName : "N/A";
                document.getElementById("fix-group-name").innerHTML=groupName;
-
+                document.getElementById("group-price-fix").value=res.data.price;
+                document.getElementById("numberPackage").placeholder=res.data.groupQuantity;
                const container=document.getElementById("container-222");
+               itemQuantityInGroup=[]
                for(let i=0;i<res.data.necessariesList.length;i++){
+                    const itemInList={
+                        necessaryId: res.data.necessariesList[i].necessaryId._id,
+                        quantity: res.data.necessariesList[i].quantity
+                    }
+                    itemQuantityInGroup.push(itemInList);
+
                     container.appendChild(renderFixGroupNecessaries(res.data.necessariesList[i]));
                     const id222=res.data.necessariesList[i].necessaryId._id;
-                    document.getElementById("plus-"+id222).onclick=function(){increase(id222)};
-                    document.getElementById("minus-"+id222).onclick=function(){decrease(id222)}; 
+                    document.getElementById("plus-"+id222).onclick=function(){
+                        itemQuantityInGroup[i].quantity++;
+                        increase(id222)
+                    };
+                    document.getElementById("minus-"+id222).onclick=function(){
+                        itemQuantityInGroup[i].quantity--;
+                        decrease(id222)
+                    }; 
                 }
 
             }
@@ -433,6 +450,7 @@ function renderGroup(data, row){
 
     const dummyBtn=document.getElementById("dummy-btn-group");
     btn.onclick=function(){
+        document.getElementById("id-fix-group").innerHTML=data._id;
         getGroupInformation2(data._id);
         dummyBtn.click();
     }
@@ -462,4 +480,80 @@ function renderGroup(data, row){
 
     container.appendChild(btn);
     row.appendChild(container);
+}
+
+const btnFixGroupConfirm=document.getElementById("fix-group-confirm");
+
+btnFixGroupConfirm.onclick=function(){
+    const groupId=document.getElementById("id-fix-group").innerHTML;
+    const groupName=document.getElementById("fix-group-name").innerHTML;
+    const groupPrice=document.getElementById("group-price-fix").value;
+    const groupQuantity=document.getElementById("numberPackage").placeholder;
+    const necessariesList=itemQuantityInGroup;
+
+    const data={
+        groupId: groupId,
+        groupName: groupName,
+        price: groupPrice,
+        groupQuantity: groupQuantity,
+        necessariesList: necessariesList
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8080/api/necessary/updateGroup"); 
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            console.log(this.responseText); 
+            const res=JSON.parse(this.responseText);
+            if(res.code==0){
+               location.reload();
+            }
+            else{
+                // document.getElementById("error-notification").innerHTML=res.message;
+                console.log(res.message);
+                alert(res.message);
+            }
+            
+        }
+    }
+    console.log(data);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.setRequestHeader("authorization", "Bearer "+localStorage.getItem("token"));
+    xhr.send(JSON.stringify(data));
+}
+
+const btnFixProductConfirm=document.getElementById("fix-product-confirm");
+
+btnFixProductConfirm.onclick=function(){
+    const necessaryId=document.getElementById("id-fix-product").innerHTML;
+    const necessaryName=document.getElementById("fix-product-name").innerHTML;
+    const price=document.getElementById("product-price-fix").value;
+    const quantity=document.getElementById("numberProduct").placeholder;
+    const data={
+        id: necessaryId,
+        necessaryName: necessaryName,
+        price: price,
+        quantity: quantity
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8080/api/necessary/updateNecessary"); 
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            console.log(this.responseText); 
+            const res=JSON.parse(this.responseText);
+            if(res.code==0){
+               location.reload();
+            }
+            else{
+                // document.getElementById("error-notification").innerHTML=res.message;
+                console.log(res.message);
+                alert(res.message);
+            }
+            
+        }
+    }
+    console.log(data);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.setRequestHeader("authorization", "Bearer "+localStorage.getItem("token"));
+    xhr.send(JSON.stringify(data));
 }

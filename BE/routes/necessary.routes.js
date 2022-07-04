@@ -8,5 +8,7 @@ router.get("/getAllNecessaries", authorizationController.middleware, necessaryCo
 router.get("/getAllGroupNecessaries", authorizationController.middleware, groupController.getAllGroups);
 router.post("/addGroupNecessaries", authorizationController.middleware, groupController.addGroup);
 router.post("/getGroup", groupController.getGroupByID);
+router.post("/updateNecessary", authorizationController.middleware, necessaryController.updateNecessary);
+router.post("/updateGroup", authorizationController.middleware, groupController.updateGroup);
 
 module.exports = router;
