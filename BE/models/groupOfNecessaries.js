@@ -13,8 +13,9 @@ const groupOfNecessaries = new mongoose.Schema({
     },
     necessariesList: [
         {
-            name: {
-                type: String,
+            necessaryId: {
+                type: ObjectId,
+                ref: "Necessary"
             },
             quantity: {
                 type: Number,

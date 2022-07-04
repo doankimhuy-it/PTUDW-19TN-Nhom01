@@ -5,11 +5,15 @@ const users=require("../models/user");
 
 class GroupOfNecessaries {
     getGroupByID = async(req, res) => {
-        const groupID = req.groupOfNecessaries.groupID;
-        const group = await groupOfNecessaries.findOne({_id: groupID})
+        const groupId = req.body.groupId;
+        const group = await groupOfNecessaries
+                            .findOne({_id: groupId})
+                            .populate({
+                                path: "necessariesList.necessaryId"
+                            });
         if (!group) {
             return res.status(400).json({
-                code: 0,
+                code: 400,
                 message: "This group is not exist"
             });
         }
@@ -52,23 +56,22 @@ class GroupOfNecessaries {
             if (user2.role == "user") {
                 return res.status(400).json({
                     code: 400,
-                    message: "You dont have permission. Only manager and admin can update group of necessaries"
+                    message: "You dont have permission. Only manager and admin can see all group of necessaries"
                 });
             } else {
                 const groupName = req.body.groupName
-                const quantity = req.body.quantity
+                const groupQuantity = req.body.groupQuantity
                 const price = req.body.price
-                const description = req.body.description
-                const unit=req.body.unit;
-                if (!groupName || !quantity || !price) {
+                const necessariesList=req.body.necessariesList;
+                if (!groupName || !groupQuantity || !price || !necessariesList || necessariesList.length==0) {
                     return res.status(200).json({
                         "code": 400,
                         "message": "Some information is missing"
                     });
                 } else {
     
-                    const newNecessary = new necessaries({necessaryName, quantity, price, description, unit})
-                    await newNecessary.save();
+                    const newGroupOfNecessaries = new groupOfNecessaries({groupName, groupQuantity, price, necessariesList})
+                    await newGroupOfNecessaries.save();
                     return res.status(200).json({
                         "code": 0,
                         "message": "Successful."

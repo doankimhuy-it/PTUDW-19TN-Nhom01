@@ -9,7 +9,7 @@ class Necessary {
         const necessary = await necessaries.findOne({_id: necessaryID})
         if (!necessary) {
             return res.status(400).json({
-                code: 0,
+                code: 400,
                 message: "This necessary not exist"
             });
         }
